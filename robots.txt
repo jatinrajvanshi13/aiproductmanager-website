@@ -1,0 +1,12 @@
+# robots.txt for aiproductmanager.ca
+# Allow all search engines to crawl the site
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://aiproductmanager.ca/sitemap.xml
+
+# Block specific paths (add as needed)
+# Disallow: /private/
+# Disallow: /admin/
