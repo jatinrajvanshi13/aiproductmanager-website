@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jatin Rajvanshi - AI Product Management Mentor | Vancouver, Canada</title>
+    <meta name="description" content="Learn AI Product Management from an experienced leader. Get mentorship, resume reviews, and career guidance in Vancouver, Canada.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-weight: 300;
+            line-height: 1.7;
+            color: #1a1a1a;
+            background: #ffffff;
+            overflow-x: hidden;
+            letter-spacing: 0.01em;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Syne', sans-serif;
+            letter-spacing: -0.03em;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding: 80px 0;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            font-weight: 700;
+            margin-bottom: 24px;
+            letter-spacing: -0.04em;
+            line-height: 1.05;
+        }
+
+        .highlight {
+            position: relative;
+            display: inline-block;
+        }
+
+        .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: 8px;
+            left: 0;
+            right: 0;
+            height: 20px;
+            background: #00D9FF;
+            opacity: 0.3;
+            z-index: -1;
+        }
+
+        .hero p.tagline {
+            font-size: clamp(1.1rem, 2vw, 1.5rem);
+            color: #666;
+            margin-bottom: 48px;
+            font-weight: 300;
+            letter-spacing: 0.02em;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 18px 48px;
+            background: #000;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: 2px solid #000;
+            cursor: pointer;
+            letter-spacing: 0.03em;
+        }
+
+        .cta-button:hover {
+            background: #fff;
+            color: #000;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        /* About Section */
+        .about {
+            padding: 120px 0;
+            background: #fafafa;
+        }
+
+        .about-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about h2 {
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            margin-bottom: 32px;
+            font-weight: 700;
+        }
+
+        .about p {
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 24px;
+            line-height: 1.9;
+            font-weight: 300;
+        }
+
+        .journey {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 16px;
+            margin-top: 48px;
+        }
+
+        .credentials-box {
+            background: #fff;
+            border: 2px solid #e5e5e5;
+            border-radius: 16px;
+            padding: 48px 40px;
+            margin: 48px auto;
+            max-width: 900px;
+        }
+
+        .credentials-box h3 {
+            font-family: 'Syne', sans-serif;
+            font-weight: 700;
+        }
+
+        .credentials-box p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .journey-item {
+            background: #fff;
+            padding: 24px 20px;
+            border-radius: 12px;
+            font-weight: 500;
+            font-size: 0.95rem;
+            color: #333;
+            border: 1px solid #e5e5e5;
+            letter-spacing: 0.02em;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            min-height: 100px;
+        }
+
+        .journey-item img {
+            max-width: 80px;
+            max-height: 40px;
+            object-fit: contain;
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: all 0.3s ease;
+        }
+
+        .journey-item:hover img {
+            filter: grayscale(0%);
+            opacity: 1;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 120px 0;
+        }
+
+        .services h2 {
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            text-align: center;
+            margin-bottom: 64px;
+            font-weight: 700;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            padding: 40px 32px;
+            border: 2px solid #e5e5e5;
+            border-radius: 16px;
+            transition: all 0.3s ease;
+            background: #fff;
+        }
+
+        .service-card:hover {
+            border-color: #00D9FF;
+            transform: translateY(-4px);
+            box-shadow: 0 20px 60px rgba(0, 217, 255, 0.1);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .service-card p {
+            color: #666;
+            line-height: 1.8;
+            font-weight: 300;
+        }
+
+        /* Expertise Section */
+        .expertise {
+            padding: 80px 0;
+            background: #000;
+            color: #fff;
+        }
+
+        .expertise-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .expertise h3 {
+            font-size: 1.8rem;
+            margin-bottom: 32px;
+            color: #00D9FF;
+            font-weight: 600;
+        }
+
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 24px;
+            margin-top: 40px;
+        }
+
+        .expertise-item {
+            background: #1a1a1a;
+            padding: 24px 20px;
+            border-radius: 8px;
+            border: 1px solid #333;
+            font-size: 0.95rem;
+            color: #ccc;
+            font-weight: 400;
+        }
+
+        .expertise-item strong {
+            color: #fff;
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 120px 0;
+            background: #000;
+            color: #fff;
+        }
+
+        .contact h2 {
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            text-align: center;
+            margin-bottom: 24px;
+            font-weight: 700;
+        }
+
+        .contact p.subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #aaa;
+            margin-bottom: 64px;
+            font-weight: 300;
+            letter-spacing: 0.02em;
+        }
+
+        .form-container {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .message-box {
+            text-align: center;
+        }
+
+        .large-text {
+            font-size: clamp(1.5rem, 3vw, 2.2rem);
+            font-weight: 600;
+            color: #00D9FF;
+            margin-bottom: 24px;
+            line-height: 1.5;
+            font-family: 'Syne', sans-serif;
+            letter-spacing: -0.02em;
+        }
+
+        .medium-text {
+            font-size: 1.2rem;
+            color: #ccc;
+            margin-bottom: 40px;
+            line-height: 1.7;
+            font-weight: 300;
+        }
+
+        .promise-box {
+            background: #1a1a1a;
+            border: 2px solid #333;
+            border-radius: 12px;
+            padding: 32px;
+            margin: 40px 0;
+            display: inline-block;
+            text-align: left;
+        }
+
+        .promise-box p {
+            font-size: 1.1rem;
+            color: #fff;
+            margin-bottom: 12px;
+            font-weight: 300;
+            letter-spacing: 0.01em;
+        }
+
+        .promise-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        .small-text {
+            font-size: 1rem;
+            color: #999;
+            margin-bottom: 32px;
+            font-weight: 300;
+            letter-spacing: 0.01em;
+        }
+
+        .submit-button {
+            display: inline-block;
+            padding: 20px 56px;
+            background: #00D9FF;
+            color: #000;
+            border: none;
+            border-radius: 50px;
+            font-weight: 500;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Inter', sans-serif;
+            text-decoration: none;
+            letter-spacing: 0.03em;
+        }
+
+        .submit-button:hover {
+            background: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 40px rgba(0, 217, 255, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            padding: 40px 0;
+            text-align: center;
+            background: #000;
+            color: #666;
+            border-top: 1px solid #222;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero {
+                min-height: 80vh;
+                padding: 60px 0;
+            }
+
+            .about, .services, .contact {
+                padding: 80px 0;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .journey {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .credentials-box {
+                padding: 32px 24px;
+            }
+
+            .credentials-box h3 {
+                font-size: 1.3rem !important;
+            }
+
+            .promise-box {
+                padding: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Start Your Journey in <span class="highlight">AI Product Management</span></h1>
+                <p class="tagline">From hating code to leading AI products at Fortune 500 companies. I bridge the tech and non-tech worlds - and I can help you do the same. Completely free mentorship in Vancouver, Canada.</p>
+                <a href="#contact" class="cta-button">Let's Connect</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <div class="container">
+            <div class="about-content">
+                <h2>Hi, I'm Jatin Rajvanshi</h2>
+                <p><strong>Lead Product Manager for AI Agents at TELUS</strong> (Member of TELUS Chief AI Office). I've spent 10+ years building products that impact millions of users across Fortune 500 companies and high-growth startups.</p>
+                <p>From programmer at Cognizant to AI Product leader - my journey took me from Delhi to Vancouver, through 7 Indian cities, with stops in Tokyo. I started with a B.Tech in Computer Science from VIT, got my MBA from UBC Sauder, and learned AI entirely through curiosity and hands-on building.</p>
+
+                <div class="credentials-box">
+                    <h3 style="font-size: 1.6rem; margin-bottom: 24px; color: #000;">What I've Built</h3>
+                    <div style="text-align: left; max-width: 700px; margin: 0 auto;">
+                        <p style="margin-bottom: 16px;">🤖 <strong>AI Agents at TELUS (Current)</strong> - Building internal and external facing AI Agents for Canada's largest telecommunications company as part of TELUS Chief AI Office</p>
+                        <p style="margin-bottom: 16px;">✈️ <strong>GenAI Chatbot at Boeing</strong> - Helped aircraft mechanics find answers in maintenance documents within minutes instead of hours</p>
+                        <p style="margin-bottom: 16px;">🎨 <strong>AI Backgrounds for eCommerce</strong> - Created marketing visuals that look almost real using GenAI (ProductShots.ai)</p>
+                        <p style="margin-bottom: 16px;">🎓 <strong>India's Largest Education CRM</strong> - Used by 80% of Indian universities, serving 1M+ students (Meritto - Deloitte Tech Fast 50)</p>
+                        <p style="margin-bottom: 16px;">🌏 <strong>Mobile App at NEC</strong> - LinkedIn Jobs for Indians seeking work in Japan, using blockchain for identity</p>
+                        <p>📊 <strong>President, UBC Product Management Club</strong> - Organized 10+ events with PMs from Amazon, Microsoft, Grammarly</p>
+                    </div>
+                </div>
+
+                <div style="background: #fff9e6; border-left: 4px solid #00D9FF; padding: 32px; margin: 48px auto; max-width: 800px; border-radius: 8px;">
+                    <p style="font-size: 1.15rem; color: #333; line-height: 1.8; margin: 0;">
+                        <strong style="color: #000;">Here's what makes me different:</strong> I understand both the non-tech and tech worlds. I started with a non-technical mindset - I literally hated writing code. But I learned. And I'm still learning every day. This journey gives me a unique ability to relate to and guide <strong>both technical and non-technical folks</strong>. Whether you're a developer wanting to move into PM, or a business person trying to understand AI - I've walked in your shoes.
+                    </p>
+                </div>
+
+                <p style="margin-top: 48px;">Now, I want to help <strong>you</strong> navigate AI Product Management - whether you're a new grad, career switcher, or experienced professional. I've been where you are, and I know the path forward.</p>
+                <p style="margin-top: 32px;"><em>I'm a real human! Check out my <a href="https://www.linkedin.com/in/jatin-rajvanshi/" target="_blank" style="color: #00D9FF; text-decoration: none; font-weight: 600; border-bottom: 2px solid #00D9FF;">LinkedIn profile</a> to verify my background.</em></p>
+
+                <div class="journey">
+                    <div class="journey-item">
+                        <img src="https://img.logo.dev/cognizant.com?token=pk_KYsNit5XSBaPdDAjm1qThg" alt="Cognizant" onerror="this.style.display='none'">
+                        <span>Cognizant</span>
+                    </div>
+                    <div class="journey-item">
+                        <img src="https://img.logo.dev/nec.com?token=pk_KYsNit5XSBaPdDAjm1qThg" alt="NEC" onerror="this.style.display='none'">
+                        <span>NEC</span>
+                    </div>
+                    <div class="journey-item">
+                        <img src="https://img.logo.dev/meritto.com?token=pk_KYsNit5XSBaPdDAjm1qThg" alt="Meritto" onerror="this.style.display='none'">
+                        <span>Meritto</span>
+                    </div>
+                    <div class="journey-item">
+                        <img src="https://img.logo.dev/boeing.com?token=pk_KYsNit5XSBaPdDAjm1qThg" alt="Boeing" onerror="this.style.display='none'">
+                        <span>Boeing</span>
+                    </div>
+                    <div class="journey-item">
+                        <img src="https://img.logo.dev/cymax.com?token=pk_KYsNit5XSBaPdDAjm1qThg" alt="Cymax" onerror="this.style.display='none'">
+                        <span>Cymax</span>
+                    </div>
+                    <div class="journey-item">
+                        <img src="https://img.logo.dev/creativedestructionlab.com?token=pk_KYsNit5XSBaPdDAjm1qThg" alt="Creative Destruction Lab" onerror="this.style.display='none'">
+                        <span>Creative Destruction Lab</span>
+                    </div>
+                    <div class="journey-item">
+                        <img src="https://img.logo.dev/telus.com?token=pk_KYsNit5XSBaPdDAjm1qThg" alt="TELUS" onerror="this.style.display='none'">
+                        <span>TELUS</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+        <div class="container">
+            <h2>How I Can Help</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">💬</div>
+                    <h3>Breaking Into AI PM</h3>
+                    <p>Whether you're technical or non-technical - I've been both. Navigate your transition from developer, business analyst, consultant, or traditional PM into AI Product Management.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📄</div>
+                    <h3>Resume & Portfolio Review</h3>
+                    <p>Stand out in the Canadian job market. I've reviewed hundreds of resumes at UBC and know what works for AI PM roles.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🤖</div>
+                    <h3>GenAI Product Strategy</h3>
+                    <p>Learn how to build GenAI products - from RAG systems and chatbots to LLM-powered features. Real production experience.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🎓</div>
+                    <h3>For New Grads & Students</h3>
+                    <p>Get your first PM job in Canada. Leverage my MBA at UBC experience and connections to accelerate your start.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🌏</div>
+                    <h3>For Immigrants in Canada</h3>
+                    <p>I moved from India to Vancouver. I understand the challenges - visas, culture, networking, and landing that first Canadian role.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🚀</div>
+                    <h3>Startup to Big Tech</h3>
+                    <p>Worked at both? I have. From Deloitte Fast 50 startups to Fortune 500 companies. Learn how to navigate both worlds.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expertise Section -->
+    <section class="expertise">
+        <div class="container">
+            <div class="expertise-content">
+                <h3>Technologies & Domains I've Worked With</h3>
+                <div class="expertise-grid">
+                    <div class="expertise-item">
+                        <strong>AI/ML</strong>
+                        GenAI, LLMs, RAG Systems, AI Agents, Prompt Engineering
+                    </div>
+                    <div class="expertise-item">
+                        <strong>Industries</strong>
+                        Aviation, eCommerce, EdTech, HRTech, Logistics, Finance
+                    </div>
+                    <div class="expertise-item">
+                        <strong>Product Types</strong>
+                        Chatbots, CRMs, Marketplaces, SaaS, Mobile Apps
+                    </div>
+                    <div class="expertise-item">
+                        <strong>Tech Background</strong>
+                        Java, Python, Microservices, APIs, Blockchain
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2>Let's Talk</h2>
+            <p class="subtitle">No sales pitch. No automation. Just real conversations.</p>
+
+            <div class="form-container">
+                <div class="message-box">
+                    <p class="large-text">Talking to people gives me joy. That's why I'm doing this.</p>
+                    <p class="medium-text">Whether you're starting out, switching careers, or looking to level up in AI Product Management - I'm here to help.</p>
+
+                    <div class="promise-box">
+                        <p><strong>✓ Completely free</strong></p>
+                        <p><strong>✓ Personal response from me</strong></p>
+                        <p><strong>✓ We'll schedule a time that works for you</strong></p>
+                    </div>
+
+                    <p class="small-text">Fill out a quick form and I'll personally email you within 24 hours to set up our call.</p>
+
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdoGncsz3TfCQhu1lAJMFQstBNUoK1tFmIEhpItRGEkuwNEFg/viewform?usp=dialog" target="_blank" class="submit-button">Fill Out Quick Form</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Jatin Rajvanshi | Vancouver, Canada</p>
+            <p style="margin-top: 12px; font-size: 0.9rem;">
+                <a href="mailto:jatinrajvanshi13@gmail.com" style="color: #00D9FF; text-decoration: none;">jatinrajvanshi13@gmail.com</a> |
+                <a href="https://www.linkedin.com/in/jatin-rajvanshi/" target="_blank" style="color: #00D9FF; text-decoration: none;">LinkedIn</a>
+            </p>
+            <p style="margin-top: 12px; font-size: 0.85rem; opacity: 0.6;">
+                <a href="https://logo.dev" title="Logo API" target="_blank" style="color: #999; text-decoration: none;">Logos provided by Logo.dev</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
