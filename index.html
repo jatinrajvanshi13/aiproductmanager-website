@@ -432,6 +432,171 @@
             font-weight: 600;
         }
 
+        /* Articles Preview Section */
+        .articles-preview {
+            padding: 120px 0;
+            background: #fafafa;
+        }
+
+        .articles-preview h2 {
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            text-align: center;
+            margin-bottom: 24px;
+            font-weight: 700;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 64px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 300;
+            line-height: 1.7;
+        }
+
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
+            max-width: 1000px;
+            margin: 0 auto 48px;
+        }
+
+        .article-card {
+            padding: 40px 32px;
+            border: 2px solid #e5e5e5;
+            border-radius: 16px;
+            transition: all 0.3s ease;
+            background: #fff;
+            position: relative;
+        }
+
+        .article-card:hover {
+            border-color: #00D9FF;
+            transform: translateY(-4px);
+            box-shadow: 0 20px 60px rgba(0, 217, 255, 0.1);
+        }
+
+        .article-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            font-size: 0.85rem;
+        }
+
+        .original-source {
+            color: #00D9FF;
+            font-weight: 500;
+            letter-spacing: 0.03em;
+        }
+
+        .reading-time {
+            color: #999;
+            font-weight: 300;
+        }
+
+        .article-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 16px;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+
+        .article-excerpt {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 24px;
+            font-weight: 300;
+        }
+
+        .article-footer {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+        }
+
+        .article-tag {
+            display: inline-block;
+            padding: 6px 16px;
+            background: rgba(0, 217, 255, 0.1);
+            color: #000;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .article-link {
+            color: #00D9FF;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 2px solid #00D9FF;
+            display: inline-block;
+            transition: all 0.3s ease;
+            letter-spacing: 0.02em;
+        }
+
+        .article-link:hover {
+            color: #000;
+        }
+
+        .coming-soon {
+            opacity: 0.7;
+            background: #f9f9f9;
+        }
+
+        .coming-soon:hover {
+            border-color: #e5e5e5;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .coming-soon-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: #fff;
+            color: #666;
+            padding: 6px 12px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            border: 1px solid #e5e5e5;
+        }
+
+        .articles-cta {
+            text-align: center;
+            margin-top: 48px;
+        }
+
+        .cta-button-secondary {
+            display: inline-block;
+            padding: 18px 48px;
+            background: #fff;
+            color: #000;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: 2px solid #000;
+            cursor: pointer;
+            letter-spacing: 0.03em;
+        }
+
+        .cta-button-secondary:hover {
+            background: #000;
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+        }
+
         /* Contact Section */
         .contact {
             padding: 120px 0;
@@ -573,6 +738,18 @@
             .promise-box {
                 padding: 24px;
             }
+
+            .articles-preview {
+                padding: 80px 0;
+            }
+
+            .articles-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .article-card {
+                padding: 32px 24px;
+            }
         }
     </style>
 </head>
@@ -686,6 +863,51 @@
                     <h3>Startup to Big Tech</h3>
                     <p>Worked at both? I have. From Deloitte Fast 50 startups to Fortune 500 companies. Learn how to navigate both worlds.</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Must-Read Articles Section -->
+    <section class="articles-preview">
+        <div class="container">
+            <h2>Must-Read Articles for AI PMs</h2>
+            <p class="section-subtitle">
+                Complex AI concepts explained like we're grabbing coffee. No jargon, no buzzwords—just practical insights you can actually use.
+            </p>
+
+            <div class="articles-grid">
+                <!-- Article Card 1: Evals -->
+                <article class="article-card">
+                    <div class="article-meta">
+                        <span class="original-source">From Anthropic</span>
+                        <span class="reading-time">10 min read</span>
+                    </div>
+                    <h3>Understanding AI Agent Evals</h3>
+                    <p class="article-excerpt">
+                        Anthropic just published their guide on evaluating AI agents. But what does this actually mean for you as a PM? Let me translate the technical stuff into decisions you'll make tomorrow.
+                    </p>
+                    <div class="article-footer">
+                        <span class="article-tag">AI Agents</span>
+                        <span class="article-tag">Testing</span>
+                        <span class="article-tag">Product Strategy</span>
+                    </div>
+                    <a href="/articles/evals-for-ai-agents.html" class="article-link">
+                        Read My Take →
+                    </a>
+                </article>
+
+                <!-- Coming Soon Card -->
+                <article class="article-card coming-soon">
+                    <div class="coming-soon-badge">Coming Soon</div>
+                    <h3>More Articles Brewing...</h3>
+                    <p class="article-excerpt">
+                        I'm rewriting more technical articles with an AI PM lens. Check back soon, or reach out to suggest what you'd like me to cover next.
+                    </p>
+                </article>
+            </div>
+
+            <div class="articles-cta">
+                <a href="/articles.html" class="cta-button-secondary">View All Articles</a>
             </div>
         </div>
     </section>

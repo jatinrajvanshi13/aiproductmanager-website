@@ -67,6 +67,9 @@
 ```
 /
 ├── index.html                      # Main landing page (29KB)
+├── articles.html                   # Articles listing page (NEW)
+├── articles/                       # Articles directory (NEW)
+│   └── evals-for-ai-agents.html   # First article: AI Agent Evals
 ├── sitemap.xml                     # SEO sitemap for search engines
 ├── robots.txt                      # Search engine crawl instructions
 ├── site.webmanifest               # PWA manifest file
@@ -144,7 +147,53 @@ Showcases expertise in:
 - CTA Button: "Fill Out Quick Form" → Google Form (opens new tab)
 - Commitment: "I'll personally email you within 24 hours"
 
-### **6. Footer**
+### **6. Must-Read Articles for AI PMs (NEW - January 13, 2026)**
+
+**Homepage Section:**
+- Located between Services and Contact sections
+- 2-card grid: 1 published article + 1 "Coming Soon" placeholder
+- Tagline: "Complex AI concepts explained like we're grabbing coffee"
+- CTA: "View All Articles" → `/articles.html`
+
+**Articles Listing Page (`/articles.html`):**
+- Navigation: Logo/Home (left) + "Get in Touch" (right)
+- Hero section with title and tagline
+- 3-column grid (desktop), 1-column (mobile)
+- Shows 1 real article + 5 coming soon placeholders
+- Each card: Meta info, title, excerpt, tags, link
+
+**Individual Article Structure (`/articles/evals-for-ai-agents.html`):**
+- Navigation: "← All Articles" + "Home"
+- Header: Title, subtitle, original article reference, reading time
+- Content sections:
+  1. **Why This Matters to You** - Hook, context, TL;DR callout (300-400 words)
+  2. **Key Takeaways** - 6 takeaway cards with PM translations (1000 words)
+  3. **What You Can Do** - 3 action boxes by role (400 words)
+  4. **First Principles** - 4 concept cards explaining fundamentals (500 words)
+- Footer: Original article link + CTAs to contact/articles
+
+**Content Tone:**
+- Conversational mentor voice (like talking over coffee)
+- Uses "you", "I", "we"
+- Short paragraphs, bullet lists, clear headings
+- Real-world PM scenarios and analogies
+- Honest about complexity and trade-offs
+
+**First Article:**
+- Topic: "Understanding AI Agent Evals" (Anthropic's evals guide)
+- Original: https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents
+- Covers: Grader types, capability vs regression evals, non-determinism metrics, agent-specific strategies
+- ~2,500 words, 10 min read
+
+**Design:**
+- Matches existing black/white/cyan palette
+- Cards: 2px border, 16px radius, hover lift effect
+- Section badges: Cyan background (20% opacity)
+- Callout boxes: Yellow background, cyan left border
+- Max-width: 800px for article content (narrower for readability)
+- Larger fonts: 1.15rem body, 1.8 line-height
+
+### **7. Footer**
 - Copyright © 2026 Jatin Rajvanshi | Vancouver, Canada
 - Email: jatinrajvanshi13@gmail.com
 - LinkedIn: https://www.linkedin.com/in/jatin-rajvanshi/
@@ -376,6 +425,30 @@ git push origin main
 ---
 
 ## 🚧 Future Enhancements
+
+### **Recently Implemented (January 13, 2026)**
+
+**✅ Must-Read Articles for AI PMs**
+- Homepage section with article cards
+- Dedicated articles listing page
+- First article: "Understanding AI Agent Evals" (Anthropic)
+- Conversational mentor tone for PM audience
+- Scalable structure for adding more articles
+
+**Adding More Articles (Process):**
+1. Read original technical article
+2. Fill content template:
+   - Why This Matters: 300-400 words + TL;DR
+   - Key Takeaways: 800-1000 words, 4-6 cards
+   - What You Can Do: 300-400 words, 3 action boxes
+   - First Principles: 400-500 words, 3-4 concepts
+3. Copy `/articles/evals-for-ai-agents.html` as template
+4. Replace content, update meta tags
+5. Add card to `/articles.html` and homepage (optional)
+6. Update `/sitemap.xml`
+7. Commit and push to deploy
+
+---
 
 ### **Discussed but Not Implemented**
 

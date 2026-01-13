@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <title>Understanding AI Agent Evals - Rewritten for PMs | Jatin Rajvanshi</title>
+    <meta name="title" content="Understanding AI Agent Evals - Explained for Product Managers">
+    <meta name="description" content="Anthropic's guide to AI agent evaluations, translated for Product Managers. Learn grader types, eval strategies, metrics, and what you can do tomorrow. No jargon, just practical insights.">
+    <meta name="keywords" content="AI Evals, AI Product Management, AI Agents Testing, Anthropic, LLM Evaluation, AI PM, Product Testing, AI Quality, pass@k">
+    <meta name="author" content="Jatin Rajvanshi">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://aiproductmanager.ca/articles/evals-for-ai-agents.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://aiproductmanager.ca/articles/evals-for-ai-agents.html">
+    <meta property="og:title" content="Understanding AI Agent Evals - Rewritten for PMs">
+    <meta property="og:description" content="Anthropic's evals guide, translated for Product Managers. Learn how to test AI agents before they fail in production.">
+    <meta property="og:image" content="https://aiproductmanager.ca/og-image.jpg">
+    <meta property="article:published_time" content="2026-01-13T00:00:00-08:00">
+    <meta property="article:author" content="Jatin Rajvanshi">
+    <meta property="article:tag" content="AI Agents">
+    <meta property="article:tag" content="Testing">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Understanding AI Agent Evals - For PMs">
+    <meta name="twitter:description" content="Learn how to test AI agents. Anthropic's guide, rewritten for Product Managers.">
+    <meta name="twitter:image" content="https://aiproductmanager.ca/og-image.jpg">
+
+    <!-- Additional SEO -->
+    <meta name="theme-color" content="#00D9FF">
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    <script defer src="/_vercel/insights/script.js"></script>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Understanding AI Agent Evals - Rewritten for Product Managers",
+      "description": "Anthropic's guide to AI agent evaluations, translated for Product Managers",
+      "image": "https://aiproductmanager.ca/og-image.jpg",
+      "datePublished": "2026-01-13",
+      "dateModified": "2026-01-13",
+      "author": {
+        "@type": "Person",
+        "name": "Jatin Rajvanshi",
+        "url": "https://aiproductmanager.ca"
+      },
+      "publisher": {
+        "@type": "Person",
+        "name": "Jatin Rajvanshi"
+      },
+      "about": ["AI Agents", "Product Management", "Testing", "Evaluations"],
+      "keywords": "AI Evals, AI Product Management, AI Agents, Testing AI"
+    }
+    </script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-weight: 300;
+            line-height: 1.7;
+            color: #1a1a1a;
+            background: #ffffff;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Syne', sans-serif;
+            letter-spacing: -0.03em;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .article-container {
+            max-width: 800px;
+        }
+
+        /* Navigation */
+        .article-nav {
+            background: #000;
+            padding: 20px 0;
+            border-bottom: 1px solid #222;
+        }
+
+        .article-nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-back, .nav-home {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .nav-back:hover, .nav-home:hover {
+            color: #00D9FF;
+        }
+
+        /* Article Header */
+        .article-header {
+            background: #fafafa;
+            padding: 80px 0 60px;
+        }
+
+        .article-breadcrumb {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 32px;
+        }
+
+        .article-breadcrumb a {
+            color: #00D9FF;
+            text-decoration: none;
+        }
+
+        .article-header h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.15;
+        }
+
+        .article-subtitle {
+            font-size: 1.3rem;
+            color: #666;
+            margin-bottom: 40px;
+            line-height: 1.6;
+            font-weight: 300;
+        }
+
+        .article-meta-bar {
+            background: #fff;
+            border: 2px solid #e5e5e5;
+            border-radius: 12px;
+            padding: 24px;
+            margin-top: 32px;
+        }
+
+        .original-article-box {
+            margin-bottom: 16px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        .meta-label {
+            font-size: 0.85rem;
+            color: #999;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .original-link {
+            color: #00D9FF;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 2px solid #00D9FF;
+        }
+
+        .original-link:hover {
+            color: #000;
+        }
+
+        .meta-date {
+            display: block;
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 8px;
+        }
+
+        .reading-info {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* Article Content */
+        .article-content {
+            padding: 80px 0;
+        }
+
+        .article-section {
+            margin-bottom: 80px;
+        }
+
+        .section-badge {
+            display: inline-block;
+            background: rgba(0, 217, 255, 0.2);
+            color: #000;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 24px;
+        }
+
+        .article-section h2 {
+            font-size: 2.2rem;
+            margin-bottom: 24px;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        .article-section h3 {
+            font-size: 1.6rem;
+            margin-bottom: 16px;
+            margin-top: 32px;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+
+        .article-section p {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .article-section ul, .article-section ol {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            margin-bottom: 24px;
+            margin-left: 24px;
+            color: #333;
+        }
+
+        .article-section li {
+            margin-bottom: 12px;
+        }
+
+        .article-section strong {
+            font-weight: 600;
+            color: #000;
+        }
+
+        .callout-box {
+            background: #fff9e6;
+            border-left: 4px solid #00D9FF;
+            padding: 32px;
+            margin: 32px 0;
+            border-radius: 8px;
+        }
+
+        .callout-box strong {
+            display: block;
+            font-size: 1.2rem;
+            margin-bottom: 16px;
+            color: #000;
+        }
+
+        .callout-box ul {
+            margin: 0;
+        }
+
+        .callout-box li {
+            margin-bottom: 8px;
+        }
+
+        .takeaway-card, .action-box, .principle-card {
+            background: #fff;
+            border: 2px solid #e5e5e5;
+            border-radius: 12px;
+            padding: 32px;
+            margin-bottom: 24px;
+        }
+
+        .takeaway-card h3, .action-box h3, .principle-card h3 {
+            margin-top: 0;
+        }
+
+        .reference-box {
+            background: #000;
+            color: #fff;
+            padding: 48px;
+            border-radius: 16px;
+            text-align: center;
+        }
+
+        .reference-box h3 {
+            color: #00D9FF;
+            margin-bottom: 20px;
+        }
+
+        .reference-box p {
+            margin-bottom: 24px;
+        }
+
+        .reference-box .cta-button {
+            display: inline-block;
+            padding: 18px 48px;
+            background: #00D9FF;
+            color: #000;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: 2px solid #00D9FF;
+        }
+
+        .reference-box .cta-button:hover {
+            background: #fff;
+            border-color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 40px rgba(255, 255, 255, 0.3);
+        }
+
+        .reference-note {
+            font-size: 0.95rem;
+            color: #999;
+            margin-top: 24px;
+        }
+
+        /* Article Footer Section */
+        .article-footer-section {
+            background: #fafafa;
+            padding: 80px 0;
+        }
+
+        .article-footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 48px;
+        }
+
+        .footer-left h3, .footer-right h3 {
+            font-size: 1.8rem;
+            margin-bottom: 16px;
+        }
+
+        .footer-left p {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 24px;
+            line-height: 1.7;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 18px 48px;
+            background: #000;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: 2px solid #000;
+        }
+
+        .cta-button:hover {
+            background: #fff;
+            color: #000;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .cta-button-secondary {
+            display: inline-block;
+            padding: 18px 48px;
+            background: #fff;
+            color: #000;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: 2px solid #000;
+        }
+
+        .cta-button-secondary:hover {
+            background: #000;
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Footer */
+        footer {
+            padding: 60px 0;
+            text-align: center;
+            background: #000;
+            color: #666;
+            border-top: 1px solid #222;
+        }
+
+        footer p {
+            margin-bottom: 12px;
+        }
+
+        footer a {
+            color: #00D9FF;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #fff;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .article-header {
+                padding: 60px 0 40px;
+            }
+
+            .article-content {
+                padding: 60px 0;
+            }
+
+            .article-section {
+                margin-bottom: 60px;
+            }
+
+            .article-section h2 {
+                font-size: 1.8rem;
+            }
+
+            .article-section h3 {
+                font-size: 1.4rem;
+            }
+
+            .article-section p, .article-section ul, .article-section ol {
+                font-size: 1.05rem;
+            }
+
+            .takeaway-card, .action-box, .principle-card, .callout-box {
+                padding: 24px;
+            }
+
+            .reference-box {
+                padding: 32px 24px;
+            }
+
+            .article-footer-content {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="article-nav">
+        <div class="container">
+            <a href="/articles.html" class="nav-back">← All Articles</a>
+            <a href="/" class="nav-home">Home</a>
+        </div>
+    </nav>
+
+    <!-- Article Header -->
+    <header class="article-header">
+        <div class="container article-container">
+            <div class="article-breadcrumb">
+                <a href="/">Home</a> / <a href="/articles.html">Articles</a> / Understanding AI Agent Evals
+            </div>
+
+            <h1>Understanding AI Agent Evals</h1>
+            <p class="article-subtitle">
+                Anthropic's guide to evaluating AI agents, rewritten for Product Managers who want to ship reliable AI products.
+            </p>
+
+            <div class="article-meta-bar">
+                <div class="original-article-box">
+                    <span class="meta-label">Original Article</span>
+                    <a href="https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents"
+                       target="_blank" class="original-link">
+                        "Demystifying evals for AI agents" by Anthropic Engineering
+                    </a>
+                    <span class="meta-date">Authors: Mikaela Grace, Jeremy Hadfield, Rodrigo Olivares, Jiri De Jonghe | Published: January 9, 2026</span>
+                </div>
+                <div class="reading-info">
+                    <span>☕ 10 min read</span>
+                    <span>Rewritten: January 13, 2026</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Article Content -->
+    <article class="article-content">
+        <div class="container article-container">
+
+            <!-- Section 1: Why This Matters -->
+            <section class="article-section why-matters">
+                <div class="section-badge">Why This Matters to You</div>
+                <h2>Why You Should Care About This as an AI PM</h2>
+
+                <p>
+                    Here's the thing about AI products: they work 80% of the time in your demo, then mysteriously fail in production at the worst possible moment. You've seen it. Your sales team gives a perfect demo to a customer. Two weeks later, that same customer emails saying "it's not working right."
+                </p>
+
+                <p>
+                    This is where <strong>evaluations</strong> (evals) come in. Think of evals as your quality control system before launch. But here's what makes AI evals different from traditional software testing—your AI agent might give a different answer every single time, even with identical inputs. So how do you test that?
+                </p>
+
+                <p>
+                    Anthropic (the team behind Claude) just published their playbook after working with dozens of teams building AI agents. Their main insight? Most teams wait too long to build evals, then scramble to figure out why their agent keeps failing. Let me translate what they learned into stuff you can actually use as a PM.
+                </p>
+
+                <div class="callout-box">
+                    <strong>The TL;DR for PMs:</strong>
+                    <ul>
+                        <li>Evals are how you test AI products before they break in production</li>
+                        <li>You need different types of graders: code-based (fast, cheap), model-based (flexible), and human (gold standard)</li>
+                        <li>Capability evals help you improve; regression evals prevent backsliding</li>
+                        <li>Start early with 20-50 simple tests based on real failures</li>
+                        <li>AI non-determinism means you need new metrics like pass@k (will succeed in k tries)</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Section 2: Key Takeaways -->
+            <section class="article-section key-takeaways">
+                <div class="section-badge">Key Takeaways</div>
+                <h2>What You Need to Know (Broken Down Simply)</h2>
+
+                <div class="takeaway-card">
+                    <h3>1. What Are Evals, Really?</h3>
+                    <p><strong>What Anthropic says:</strong> "Evaluations are test suites that measure agent capabilities and catch regressions before deployment."</p>
+
+                    <p><strong>What this means for you:</strong> Evals are like unit tests, but for AI behavior. Instead of checking if a function returns "42", you're checking if your AI agent can book a flight correctly, or if it hallucinates fake data.</p>
+
+                    <p>Here's the structure they recommend:</p>
+                    <ul>
+                        <li><strong>Task:</strong> A single test case (e.g., "Extract invoice total from this PDF")</li>
+                        <li><strong>Trial:</strong> Running that task multiple times (because AI is non-deterministic)</li>
+                        <li><strong>Grader:</strong> Logic that scores whether the agent succeeded</li>
+                        <li><strong>Transcript:</strong> Complete record of what the agent did (tool calls, reasoning, output)</li>
+                    </ul>
+
+                    <p><strong>PM decision point:</strong> You need evals BEFORE launch, not after. Build them as you build the product.</p>
+                </div>
+
+                <div class="takeaway-card">
+                    <h3>2. Three Types of Graders (And When to Use Each)</h3>
+
+                    <p>This is where it gets practical. You have three ways to grade your AI agent's performance:</p>
+
+                    <p><strong>Code-based graders:</strong> Old-school programming checks</p>
+                    <ul>
+                        <li>Examples: String matching, checking if output is valid JSON, verifying a file was created</li>
+                        <li>Pros: Fast, cheap, deterministic, easy to debug</li>
+                        <li>Cons: Brittle—fails when AI finds a valid but different solution</li>
+                        <li>When to use: Clear right/wrong answers (e.g., "did the agent call the correct API?")</li>
+                    </ul>
+
+                    <p><strong>Model-based graders:</strong> Use another LLM to grade the output</p>
+                    <ul>
+                        <li>Examples: Ask Claude to score if response is "helpful and accurate on a 1-10 scale"</li>
+                        <li>Pros: Flexible, handles nuance, scales well</li>
+                        <li>Cons: Non-deterministic, costs money, needs calibration</li>
+                        <li>When to use: Subjective quality (tone, completeness, clarity)</li>
+                    </ul>
+
+                    <p><strong>Human graders:</strong> Actual people reviewing outputs</p>
+                    <ul>
+                        <li>Examples: Subject matter experts, crowdsourced reviews</li>
+                        <li>Pros: Gold standard, catches edge cases</li>
+                        <li>Cons: Expensive, slow, doesn't scale</li>
+                        <li>When to use: Calibrating your model-based graders, spot-checking production</li>
+                    </ul>
+
+                    <p><strong>PM decision point:</strong> Start with code-based graders for speed. Add model-based graders for quality. Use humans to validate both are working.</p>
+                </div>
+
+                <div class="takeaway-card">
+                    <h3>3. Capability vs Regression Evals</h3>
+
+                    <p><strong>Capability evals:</strong> Tests where you expect to fail (for now)</p>
+                    <ul>
+                        <li>Purpose: Measure improvement over time</li>
+                        <li>Example: "Can the agent handle 10-step workflows?" (currently: 20% pass rate, goal: 80%)</li>
+                        <li>You run these to see if your changes are making the agent smarter</li>
+                    </ul>
+
+                    <p><strong>Regression evals:</strong> Tests you should pass every time</p>
+                    <ul>
+                        <li>Purpose: Don't break what's already working</li>
+                        <li>Example: "Can the agent still format dates correctly?" (should be: 100% pass rate)</li>
+                        <li>These are your safety net in CI/CD</li>
+                    </ul>
+
+                    <p><strong>Here's the lifecycle:</strong> Today's capability eval (60% pass rate, improving) becomes tomorrow's regression eval (must maintain 100%). It's like graduating a feature from beta to stable.</p>
+
+                    <p><strong>PM decision point:</strong> Track both. Capability evals tell you if you're getting better. Regression evals tell you if you broke something.</p>
+                </div>
+
+                <div class="takeaway-card">
+                    <h3>4. Agent-Specific Eval Strategies</h3>
+
+                    <p>Different types of agents need different eval approaches. Anthropic breaks it down:</p>
+
+                    <p><strong>Coding agents:</strong> Use deterministic graders</p>
+                    <ul>
+                        <li>Run the code, check if tests pass</li>
+                        <li>Verify files were created/modified correctly</li>
+                        <li>Use static analysis to check code quality</li>
+                        <li>Example benchmark: SWE-bench (GitHub issues dataset)</li>
+                    </ul>
+
+                    <p><strong>Conversational agents:</strong> Use simulated users + multi-dimensional success</p>
+                    <ul>
+                        <li>Have a second LLM play the customer role</li>
+                        <li>Measure: Did it solve the issue? In how many turns? Was the tone appropriate?</li>
+                        <li>Example: Customer support bot resolves return request in &lt;5 messages with polite tone</li>
+                    </ul>
+
+                    <p><strong>Research agents:</strong> Combine multiple grader types</p>
+                    <ul>
+                        <li>Check: Are claims grounded in sources? Are sources high-quality? Is coverage comprehensive?</li>
+                        <li>Needs frequent calibration with domain experts</li>
+                        <li>Highly subjective—"comprehensive" means different things to different people</li>
+                    </ul>
+
+                    <p><strong>Computer-use agents:</strong> Run in sandboxed environments</p>
+                    <ul>
+                        <li>Give the agent a browser or OS, measure if it completes tasks</li>
+                        <li>Trade-off: Screenshots (faster) vs DOM extraction (more tokens, slower)</li>
+                        <li>Example benchmarks: WebArena, OSWorld</li>
+                    </ul>
+                </div>
+
+                <div class="takeaway-card">
+                    <h3>5. Understanding Non-Determinism Metrics</h3>
+
+                    <p>This is where AI evals differ from traditional software testing. Your agent might succeed on retry 3 but fail on retry 1. So how do you measure reliability?</p>
+
+                    <p><strong>pass@k:</strong> What's the chance you succeed in k attempts?</p>
+                    <ul>
+                        <li>If pass@1 = 50%, you succeed on first try half the time</li>
+                        <li>If pass@5 = 80%, you succeed within 5 tries 80% of the time</li>
+                        <li>Use this when: You can afford retries (batch jobs, background tasks)</li>
+                    </ul>
+
+                    <p><strong>pass^k:</strong> What's the chance all k trials succeed?</p>
+                    <ul>
+                        <li>If each trial has 75% success, then pass^3 = 0.75³ ≈ 42%</li>
+                        <li>More conservative—tells you consistency</li>
+                        <li>Use this when: You need reliability (customer-facing, real-time)</li>
+                    </ul>
+
+                    <p><strong>PM decision point:</strong> Know which metric matches your use case. A research tool can tolerate retries. A customer chatbot cannot.</p>
+                </div>
+
+                <div class="takeaway-card">
+                    <h3>6. Common Pitfalls (And How to Avoid Them)</h3>
+
+                    <p>Anthropic shares real mistakes teams make. Here's what to watch for:</p>
+
+                    <ul>
+                        <li><strong>Over-specifying graders:</strong> Don't check every step, just the outcome. Agents might find valid approaches you didn't anticipate.</li>
+                        <li><strong>Shared state between trials:</strong> Each test should run in a clean environment, or else the agent "learns" from previous runs and inflates scores.</li>
+                        <li><strong>Ambiguous tasks:</strong> If two domain experts can't agree on the right answer, your eval is broken—not your agent.</li>
+                        <li><strong>Class imbalance:</strong> Test where behavior should AND shouldn't occur. (Example: Test that agent triggers search when needed AND doesn't trigger when not needed)</li>
+                        <li><strong>Taking scores at face value:</strong> Always read transcripts. Understand why the agent failed. Your grader might be rejecting valid solutions.</li>
+                        <li><strong>Ignoring saturation:</strong> If you hit 100% pass rate, the eval is no longer useful for improvement. You need harder tests.</li>
+                    </ul>
+                </div>
+
+            </section>
+
+            <!-- Section 3: What You Can Do -->
+            <section class="article-section action-items">
+                <div class="section-badge">What You Can Do</div>
+                <h2>What You Can Do After Reading This</h2>
+
+                <div class="action-box">
+                    <h3>If you're defining requirements for AI features:</h3>
+                    <ul>
+                        <li>Write 5-10 example tasks the agent should handle successfully (these become your first evals)</li>
+                        <li>For each task, define what "success" looks like—be specific but not over-specified</li>
+                        <li>Identify which grader type fits: code-based for deterministic outcomes, model-based for quality, human for calibration</li>
+                        <li>Add "build evals" as a deliverable in your sprint planning—not a nice-to-have, a requirement</li>
+                        <li>Ask: Do we need pass@k (retries OK) or pass^k (reliability critical)?</li>
+                    </ul>
+                </div>
+
+                <div class="action-box">
+                    <h3>If you're working with engineering on AI products:</h3>
+                    <ul>
+                        <li>Share this article's framework with your team</li>
+                        <li>Propose: Start with 20-50 simple tests based on past failures or edge cases</li>
+                        <li>Discuss: Which eval harness should we use? (Anthropic mentions Harbor, Promptfoo, Braintrust, LangSmith)</li>
+                        <li>Set a rule: No changes to production without passing regression evals</li>
+                        <li>Schedule weekly transcript reviews—spend 30 minutes reading actual agent failures together</li>
+                        <li>Calibrate your model-based graders against human judgment monthly</li>
+                    </ul>
+                </div>
+
+                <div class="action-box">
+                    <h3>If you're building your first AI agent:</h3>
+                    <ul>
+                        <li>Start evals NOW, even with just 10 test cases from your development testing</li>
+                        <li>Use a mix: 70% code-based (fast feedback), 20% model-based (quality), 10% human (spot-check)</li>
+                        <li>Run evals in CI/CD before every deployment</li>
+                        <li>Track metrics over time: Are we improving? Are we backsliding?</li>
+                        <li>Read Anthropic's original article (link below) and their cookbook for technical examples</li>
+                        <li>Remember: It's easier to build evals alongside development than to reverse-engineer them from production</li>
+                    </ul>
+                </div>
+
+                <p style="margin-top: 32px;">
+                    <strong>The meta-lesson:</strong> Evals aren't just testing—they're how you build confidence in your AI product. Teams with strong evals ship faster because they know what works and what doesn't. Teams without evals debug production fires reactively.
+                </p>
+            </section>
+
+            <!-- Section 4: First Principles -->
+            <section class="article-section first-principles">
+                <div class="section-badge">First Principles</div>
+                <h2>Understanding This from First Principles</h2>
+
+                <p>Let me break down why evals matter and how they work, from the ground up.</p>
+
+                <div class="principle-card">
+                    <h3>Why do evals exist in the first place?</h3>
+                    <p>
+                        Traditional software is deterministic: same input → same output, always. You test once, it passes, you're confident.
+                    </p>
+                    <p>
+                        AI agents are non-deterministic: same input → different outputs, based on randomness (temperature, sampling). You test once, it passes, but that tells you almost nothing about the next run.
+                    </p>
+                    <p>
+                        <strong>Evals solve this by testing multiple times and measuring statistical reliability.</strong> Instead of "does it work?", you ask "what's the probability it works?" This is a fundamental shift in how we think about quality.
+                    </p>
+                </div>
+
+                <div class="principle-card">
+                    <h3>What's the core trade-off?</h3>
+                    <p>
+                        You have three dimensions in eval design:
+                    </p>
+                    <ul>
+                        <li><strong>Speed:</strong> Code-based graders run in milliseconds. Model-based take seconds. Humans take hours.</li>
+                        <li><strong>Cost:</strong> Code is free. Models cost money per eval. Humans are expensive.</li>
+                        <li><strong>Quality:</strong> Code is brittle. Models are flexible but noisy. Humans are the gold standard.</li>
+                    </ul>
+                    <p>
+                        <strong>You can't maximize all three.</strong> The art of evals is choosing the right tool for each test case. Use code for known patterns, models for quality checks, humans for calibration.
+                    </p>
+                </div>
+
+                <div class="principle-card">
+                    <h3>When do you need evals?</h3>
+                    <p>
+                        Anthropic's teams discovered evals are valuable at three stages:
+                    </p>
+                    <ol>
+                        <li><strong>Pre-launch (development):</strong> Catch failures before they reach users. This is where most teams should start.</li>
+                        <li><strong>CI/CD (deployment):</strong> Automated gate—regression evals must pass or deployment blocks. Prevents backsliding.</li>
+                        <li><strong>Production (monitoring):</strong> Sample live traffic, run evals offline, detect drift. Your agent might degrade over time as user patterns change.</li>
+                    </ol>
+                    <p>
+                        Think of evals as a <strong>Swiss cheese model:</strong> Multiple layers of defense. Automated evals catch 80% of issues. A/B testing catches 15%. User feedback catches the last 5%. No single method is perfect, but together they create reliability.
+                    </p>
+                </div>
+
+                <div class="principle-card">
+                    <h3>Why is this hard for AI products specifically?</h3>
+                    <p>
+                        Because we're testing <strong>behavior, not code.</strong> In traditional software, you control the logic. In AI, you control the inputs and hope the behavior emerges.
+                    </p>
+                    <p>
+                        This means:
+                    </p>
+                    <ul>
+                        <li>Your agent might be right in ways you didn't anticipate (hence: don't over-specify graders)</li>
+                        <li>Your agent might fail differently each time (hence: run multiple trials)</li>
+                        <li>Your graders might disagree with reality (hence: calibrate with humans)</li>
+                        <li>Your evals might become obsolete as the agent improves (hence: graduation from capability → regression)</li>
+                    </ul>
+                    <p>
+                        <strong>The mindset shift:</strong> You're not testing if code runs correctly. You're measuring probabilistic reliability of intelligent behavior. That requires new tools, new metrics, and new thinking.
+                    </p>
+                </div>
+
+            </section>
+
+            <!-- Original Article Reference -->
+            <section class="article-section original-reference">
+                <div class="reference-box">
+                    <h3>Read the Original Article</h3>
+                    <p>
+                        <strong>"Demystifying evals for AI agents"</strong><br>
+                        By Mikaela Grace, Jeremy Hadfield, Rodrigo Olivares, and Jiri De Jonghe<br>
+                        Published by Anthropic Engineering on January 9, 2026
+                    </p>
+                    <a href="https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents"
+                       target="_blank" class="cta-button">
+                        Read Original on Anthropic →
+                    </a>
+                    <p class="reference-note">
+                        This rewrite is my interpretation for AI Product Managers. For technical implementation details, deep dives on eval harnesses, and code examples, read Anthropic's original piece and their cookbook.
+                    </p>
+                </div>
+            </section>
+
+        </div>
+    </article>
+
+    <!-- Article Footer -->
+    <section class="article-footer-section">
+        <div class="container">
+            <div class="article-footer-content">
+                <div class="footer-left">
+                    <h3>Found this helpful?</h3>
+                    <p>Let's talk about how you can apply this to your product. I offer free mentorship for AI PMs in Canada.</p>
+                    <a href="/#contact" class="cta-button">Let's Connect</a>
+                </div>
+                <div class="footer-right">
+                    <h3>More Articles</h3>
+                    <p>I'm rewriting more technical AI articles with a PM lens. Check out the full collection.</p>
+                    <a href="/articles.html" class="cta-button-secondary">View All Articles</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Jatin Rajvanshi | Vancouver, Canada</p>
+            <p style="margin-top: 12px; font-size: 0.9rem;">
+                <a href="mailto:jatinrajvanshi13@gmail.com">jatinrajvanshi13@gmail.com</a> |
+                <a href="https://www.linkedin.com/in/jatin-rajvanshi/" target="_blank">LinkedIn</a> |
+                <a href="/">Home</a>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
