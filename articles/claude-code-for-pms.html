@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <title>Why Every AI PM Should Use Claude Code | Jatin Rajvanshi</title>
+    <meta name="title" content="Why Every AI PM Should Use Claude Code - Explained for Product Managers">
+    <meta name="description" content="Lenny Rachitsky's guide to Claude Code, translated for Product Managers. Learn why this isn't just for engineers—it's your AI assistant that actually understands your files, automates research, and saves you hours every week.">
+    <meta name="keywords" content="Claude Code, AI Product Management, AI Tools for PMs, Lenny Rachitsky, Product Manager Tools, AI Assistant, Automation for PMs">
+    <meta name="author" content="Jatin Rajvanshi">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://aiproductmanager.ca/articles/claude-code-for-pms.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://aiproductmanager.ca/articles/claude-code-for-pms.html">
+    <meta property="og:title" content="Why Every AI PM Should Use Claude Code">
+    <meta property="og:description" content="Lenny's guide to Claude Code, explained for PMs. It's not a coding tool—it's your AI assistant that lives on your computer.">
+    <meta property="og:image" content="https://aiproductmanager.ca/og-image.jpg">
+    <meta property="article:published_time" content="2026-01-13T00:00:00-08:00">
+    <meta property="article:author" content="Jatin Rajvanshi">
+    <meta property="article:tag" content="AI Tools">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Why Every AI PM Should Use Claude Code">
+    <meta name="twitter:description" content="Not a coding tool. Your AI assistant that understands your files. Lenny's guide, rewritten for PMs.">
+    <meta name="twitter:image" content="https://aiproductmanager.ca/og-image.jpg">
+
+    <!-- Additional SEO -->
+    <meta name="theme-color" content="#00D9FF">
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    <script defer src="/_vercel/insights/script.js"></script>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Why Every AI PM Should Use Claude Code",
+      "description": "Lenny Rachitsky's guide to Claude Code, translated for Product Managers",
+      "image": "https://aiproductmanager.ca/og-image.jpg",
+      "datePublished": "2026-01-13",
+      "dateModified": "2026-01-13",
+      "author": {
+        "@type": "Person",
+        "name": "Jatin Rajvanshi",
+        "url": "https://aiproductmanager.ca"
+      },
+      "publisher": {
+        "@type": "Person",
+        "name": "Jatin Rajvanshi"
+      },
+      "about": ["Claude Code", "AI Tools", "Product Management", "Automation"],
+      "keywords": "Claude Code, AI PM Tools, Automation, Lenny Rachitsky"
+    }
+    </script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-weight: 300;
+            line-height: 1.7;
+            color: #1a1a1a;
+            background: #ffffff;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Syne', sans-serif;
+            letter-spacing: -0.03em;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .article-container {
+            max-width: 800px;
+        }
+
+        /* Navigation */
+        .article-nav {
+            background: #000;
+            padding: 20px 0;
+            border-bottom: 1px solid #222;
+        }
+
+        .article-nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-back, .nav-home {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .nav-back:hover, .nav-home:hover {
+            color: #00D9FF;
+        }
+
+        /* Article Header */
+        .article-header {
+            background: #fafafa;
+            padding: 80px 0 60px;
+        }
+
+        .article-breadcrumb {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 32px;
+        }
+
+        .article-breadcrumb a {
+            color: #00D9FF;
+            text-decoration: none;
+        }
+
+        .article-header h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.15;
+        }
+
+        .article-subtitle {
+            font-size: 1.3rem;
+            color: #666;
+            margin-bottom: 40px;
+            line-height: 1.6;
+            font-weight: 300;
+        }
+
+        .article-meta-bar {
+            background: #fff;
+            border: 2px solid #e5e5e5;
+            border-radius: 12px;
+            padding: 24px;
+            margin-top: 32px;
+        }
+
+        .original-article-box {
+            margin-bottom: 16px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        .meta-label {
+            font-size: 0.85rem;
+            color: #999;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .original-link {
+            color: #00D9FF;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 2px solid #00D9FF;
+        }
+
+        .original-link:hover {
+            color: #000;
+        }
+
+        .meta-date {
+            display: block;
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 8px;
+        }
+
+        .reading-info {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* Article Content */
+        .article-content {
+            padding: 80px 0;
+        }
+
+        .article-section {
+            margin-bottom: 80px;
+        }
+
+        .section-badge {
+            display: inline-block;
+            background: rgba(0, 217, 255, 0.2);
+            color: #000;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 24px;
+        }
+
+        .article-section h2 {
+            font-size: 2.2rem;
+            margin-bottom: 24px;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        .article-section h3 {
+            font-size: 1.6rem;
+            margin-bottom: 16px;
+            margin-top: 32px;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+
+        .article-section p {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .article-section ul, .article-section ol {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            margin-bottom: 24px;
+            margin-left: 24px;
+            color: #333;
+        }
+
+        .article-section li {
+            margin-bottom: 12px;
+        }
+
+        .article-section strong {
+            font-weight: 600;
+            color: #000;
+        }
+
+        .callout-box {
+            background: #fff9e6;
+            border-left: 4px solid #00D9FF;
+            padding: 32px;
+            margin: 32px 0;
+            border-radius: 8px;
+        }
+
+        .callout-box strong {
+            display: block;
+            font-size: 1.2rem;
+            margin-bottom: 16px;
+            color: #000;
+        }
+
+        .callout-box ul {
+            margin: 0;
+        }
+
+        .callout-box li {
+            margin-bottom: 8px;
+        }
+
+        .takeaway-card, .action-box, .principle-card {
+            background: #fff;
+            border: 2px solid #e5e5e5;
+            border-radius: 12px;
+            padding: 32px;
+            margin-bottom: 24px;
+        }
+
+        .takeaway-card h3, .action-box h3, .principle-card h3 {
+            margin-top: 0;
+        }
+
+        .reference-box {
+            background: #000;
+            color: #fff;
+            padding: 48px;
+            border-radius: 16px;
+            text-align: center;
+        }
+
+        .reference-box h3 {
+            color: #00D9FF;
+            margin-bottom: 20px;
+        }
+
+        .reference-box p {
+            margin-bottom: 24px;
+        }
+
+        .reference-box .cta-button {
+            display: inline-block;
+            padding: 18px 48px;
+            background: #00D9FF;
+            color: #000;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: 2px solid #00D9FF;
+        }
+
+        .reference-box .cta-button:hover {
+            background: #fff;
+            border-color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 40px rgba(255, 255, 255, 0.3);
+        }
+
+        .reference-note {
+            font-size: 0.95rem;
+            color: #999;
+            margin-top: 24px;
+        }
+
+        /* Article Footer Section */
+        .article-footer-section {
+            background: #fafafa;
+            padding: 80px 0;
+        }
+
+        .article-footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 48px;
+        }
+
+        .footer-left h3, .footer-right h3 {
+            font-size: 1.8rem;
+            margin-bottom: 16px;
+        }
+
+        .footer-left p {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 24px;
+            line-height: 1.7;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 18px 48px;
+            background: #000;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: 2px solid #000;
+        }
+
+        .cta-button:hover {
+            background: #fff;
+            color: #000;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .cta-button-secondary {
+            display: inline-block;
+            padding: 18px 48px;
+            background: #fff;
+            color: #000;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: 2px solid #000;
+        }
+
+        .cta-button-secondary:hover {
+            background: #000;
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Footer */
+        footer {
+            padding: 60px 0;
+            text-align: center;
+            background: #000;
+            color: #666;
+            border-top: 1px solid #222;
+        }
+
+        footer p {
+            margin-bottom: 12px;
+        }
+
+        footer a {
+            color: #00D9FF;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #fff;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .article-header {
+                padding: 60px 0 40px;
+            }
+
+            .article-content {
+                padding: 60px 0;
+            }
+
+            .article-section {
+                margin-bottom: 60px;
+            }
+
+            .article-section h2 {
+                font-size: 1.8rem;
+            }
+
+            .article-section h3 {
+                font-size: 1.4rem;
+            }
+
+            .article-section p, .article-section ul, .article-section ol {
+                font-size: 1.05rem;
+            }
+
+            .takeaway-card, .action-box, .principle-card, .callout-box {
+                padding: 24px;
+            }
+
+            .reference-box {
+                padding: 32px 24px;
+            }
+
+            .article-footer-content {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="article-nav">
+        <div class="container">
+            <a href="/articles.html" class="nav-back">← All Articles</a>
+            <a href="/" class="nav-home">Home</a>
+        </div>
+    </nav>
+
+    <!-- Article Header -->
+    <header class="article-header">
+        <div class="container article-container">
+            <div class="article-breadcrumb">
+                <a href="/">Home</a> / <a href="/articles.html">Articles</a> / Why Every AI PM Should Use Claude Code
+            </div>
+
+            <h1>Why Every AI PM Should Use Claude Code</h1>
+            <p class="article-subtitle">
+                Lenny's guide to Claude Code, rewritten for Product Managers. Spoiler: This isn't a coding tool—it's your AI assistant that actually understands your files and automates the boring stuff.
+            </p>
+
+            <div class="article-meta-bar">
+                <div class="original-article-box">
+                    <span class="meta-label">Original Article</span>
+                    <a href="https://www.lennysnewsletter.com/p/everyone-should-be-using-claude-code"
+                       target="_blank" class="original-link">
+                        "Everyone should be using Claude Code" by Lenny Rachitsky
+                    </a>
+                    <span class="meta-date">From Lenny's Newsletter | Published: January 2026</span>
+                </div>
+                <div class="reading-info">
+                    <span>☕ 8 min read</span>
+                    <span>Rewritten: January 13, 2026</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Article Content -->
+    <article class="article-content">
+        <div class="container article-container">
+
+            <!-- Section 1: Why This Matters -->
+            <section class="article-section why-matters">
+                <div class="section-badge">Why This Matters to You</div>
+                <h2>Why You Should Care About This as an AI PM</h2>
+
+                <p>
+                    When you hear "Claude Code," you probably think: "That's for engineers, not me." That's exactly what I thought too. Then Lenny Rachitsky—one of the most influential voices in product management—wrote an entire piece arguing that <strong>everyone should be using it</strong>, especially non-technical folks.
+                </p>
+
+                <p>
+                    Here's what changed my mind: Claude Code isn't a coding tool. It's an AI assistant that lives on your computer and can actually access your files, organize your folders, analyze your research, and automate the tedious stuff you do every week. Think ChatGPT, but instead of copying and pasting between tabs, it can read your PDFs, sort your downloads folder, and pull data from your file system—all while you focus on the strategic work.
+                </p>
+
+                <p>
+                    As a PM, I spend hours every week doing things like: synthesizing customer interviews, organizing research notes, creating job descriptions, analyzing competitor data, and converting messy transcripts into action items. Claude Code can handle most of that for me. And if it can help me, it can probably help you too.
+                </p>
+
+                <div class="callout-box">
+                    <strong>The TL;DR for PMs:</strong>
+                    <ul>
+                        <li>Claude Code is AI that runs on your computer, not just in a browser</li>
+                        <li>It can read, organize, and analyze your local files (PDFs, CSVs, audio, videos)</li>
+                        <li>Use cases for PMs: research synthesis, file organization, automation, content creation</li>
+                        <li>Installation is literally one terminal command (even if you've never used terminal)</li>
+                        <li>It's free to start, and you're already paying for Claude if you use it daily</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Section 2: Key Takeaways -->
+            <section class="article-section key-takeaways">
+                <div class="section-badge">Key Takeaways</div>
+                <h2>What You Need to Know (Broken Down Simply)</h2>
+
+                <div class="takeaway-card">
+                    <h3>1. What Is Claude Code, Really?</h3>
+                    <p><strong>What Lenny says:</strong> "The most underrated AI tool" that's actually "a super-intelligent AI running locally" on your computer.</p>
+
+                    <p><strong>What this means for you:</strong> It's Claude (the AI you already know), but instead of typing prompts in a web browser, it runs commands directly on your machine. This means it can:</p>
+                    <ul>
+                        <li>Read files from your hard drive (without you uploading them)</li>
+                        <li>Organize folders automatically</li>
+                        <li>Run scripts and automate workflows</li>
+                        <li>Handle large files that would crash a browser</li>
+                        <li>Work with your actual file structure, not just text you paste</li>
+                    </ul>
+
+                    <p>Think of it as the difference between telling someone about a messy room (ChatGPT) vs. inviting them into the room to actually clean it (Claude Code).</p>
+
+                    <p><strong>PM decision point:</strong> If you work with lots of files—research docs, transcripts, spreadsheets—Claude Code is built for you.</p>
+                </div>
+
+                <div class="takeaway-card">
+                    <h3>2. Why "Local" Changes Everything</h3>
+
+                    <p>Web-based AI tools (ChatGPT, Gemini, Claude.ai) all have the same limitation: you have to bring data to them. Upload files, copy-paste text, describe what you need.</p>
+
+                    <p>Claude Code flips this. It comes to your data. Here's what that unlocks:</p>
+
+                    <ul>
+                        <li><strong>File organization:</strong> "Sort my Downloads folder by file type" or "Find all PDFs related to customer research"</li>
+                        <li><strong>Batch processing:</strong> "Rename these 50 screenshots with descriptive names" or "Convert all these audio files to text"</li>
+                        <li><strong>Research synthesis:</strong> "Read these 10 interview transcripts and summarize key themes"</li>
+                        <li><strong>Data extraction:</strong> "Pull all invoice totals from these PDFs into a spreadsheet"</li>
+                    </ul>
+
+                    <p>You're not limited by upload sizes, browser tabs, or copy-paste workflows. The AI sees your computer the way you do.</p>
+
+                    <p><strong>PM decision point:</strong> Any repetitive task involving your files is now automatable. Ask yourself: "What do I do every week that involves moving, sorting, or analyzing files?"</p>
+                </div>
+
+                <div class="takeaway-card">
+                    <h3>3. Real PM Use Cases (From Lenny's Examples)</h3>
+
+                    <p>Lenny shares specific examples from non-technical users. Here are the PM-relevant ones:</p>
+
+                    <p><strong>Customer research:</strong></p>
+                    <ul>
+                        <li>"Analyze these 15 customer interview transcripts and identify top feature requests"</li>
+                        <li>"Find patterns in user complaints across these support tickets"</li>
+                        <li>"Summarize what users said about pricing in these interviews"</li>
+                    </ul>
+
+                    <p><strong>Hiring and team work:</strong></p>
+                    <ul>
+                        <li>"Write a job description for a senior PM based on these existing JDs and our needs"</li>
+                        <li>"Analyze meeting transcripts and identify recurring conflicts or decision bottlenecks"</li>
+                        <li>"Create an onboarding checklist from our internal wiki and past new hire docs"</li>
+                    </ul>
+
+                    <p><strong>Strategy and planning:</strong></p>
+                    <ul>
+                        <li>"Read our Git commit history and generate a changelog for stakeholders"</li>
+                        <li>"Scrape competitor websites and extract their pricing tiers"</li>
+                        <li>"Assess our product roadmap and flag dependencies or conflicts"</li>
+                        <li>"Brainstorm domain names for this new feature and check if they're available"</li>
+                    </ul>
+
+                    <p><strong>Content creation:</strong></p>
+                    <ul>
+                        <li>"Turn this product spec into a customer-facing announcement"</li>
+                        <li>"Build an HTML presentation from these talking points"</li>
+                        <li>"Generate social posts summarizing this product update"</li>
+                    </ul>
+
+                    <p>Notice a pattern? These aren't coding tasks. They're <strong>research, synthesis, automation, and communication</strong>—core PM work.</p>
+                </div>
+
+                <div class="takeaway-card">
+                    <h3>4. How It Actually Works (The Technical Bits, Simplified)</h3>
+
+                    <p>You don't need to understand how it works to use it, but here's the gist if you're curious:</p>
+
+                    <ol>
+                        <li><strong>You install Claude Code:</strong> One terminal command (Mac or Windows). Takes 30 seconds.</li>
+                        <li><strong>You tell it what you want:</strong> Natural language, like "organize my Downloads folder by file type"</li>
+                        <li><strong>Claude proposes actions:</strong> Shows you what it plans to do (move files, run commands, etc.)</li>
+                        <li><strong>You approve:</strong> It executes. You can watch it work or let it run in the background.</li>
+                    </ol>
+
+                    <p>Under the hood, it's using your computer's terminal (command line) to run operations. But you don't write commands—you describe outcomes, and it figures out the how.</p>
+
+                    <p><strong>Safety note:</strong> Claude Code shows you what it's about to do before running commands. You always approve. It won't secretly delete files or break things.</p>
+
+                    <p><strong>PM decision point:</strong> If you can install an app, you can use Claude Code. The barrier to entry is intentionally low.</p>
+                </div>
+
+                <div class="takeaway-card">
+                    <h3>5. When to Use Claude Code vs. ChatGPT/Claude.ai</h3>
+
+                    <p>This is the question I get most: "When should I use Claude Code instead of just ChatGPT?"</p>
+
+                    <p><strong>Use ChatGPT/Claude.ai when:</strong></p>
+                    <ul>
+                        <li>You're brainstorming ideas or having a conversation</li>
+                        <li>You need quick answers or explanations</li>
+                        <li>You're drafting content (emails, docs, posts)</li>
+                        <li>Your task doesn't involve files on your computer</li>
+                    </ul>
+
+                    <p><strong>Use Claude Code when:</strong></p>
+                    <ul>
+                        <li>You're working with local files (PDFs, CSVs, audio, video)</li>
+                        <li>You need to organize or automate file-based workflows</li>
+                        <li>You have repetitive tasks (batch renaming, sorting, extracting data)</li>
+                        <li>You want the AI to "see" your folder structure and make decisions</li>
+                        <li>You're doing research synthesis across multiple documents</li>
+                    </ul>
+
+                    <p>Think of it this way: ChatGPT is your thinking partner. Claude Code is your doing partner.</p>
+                </div>
+
+                <div class="takeaway-card">
+                    <h3>6. The Hidden Benefit: Learning to Think in Automation</h3>
+
+                    <p>Here's something Lenny doesn't explicitly say but I've noticed: Using Claude Code trains you to spot automation opportunities.</p>
+
+                    <p>When you realize "I can just ask Claude Code to do this," you start noticing all the manual work you've been tolerating. Suddenly you're thinking:</p>
+                    <ul>
+                        <li>"Wait, I manually sort these files every week. Claude Code can do that."</li>
+                        <li>"I copy-paste data between tools. Could Claude Code extract it directly?"</li>
+                        <li>"I read through 20 docs to find mentions of 'pricing.' Claude Code can search instantly."</li>
+                    </ul>
+
+                    <p>You become more <strong>leverage-aware</strong>. You start designing your workflows around what's automatable vs. what requires your unique judgment. That's a PM superpower.</p>
+
+                    <p><strong>PM decision point:</strong> Even if you only automate 2-3 tasks, the mindset shift is worth it.</p>
+                </div>
+
+            </section>
+
+            <!-- Section 3: What You Can Do -->
+            <section class="article-section action-items">
+                <div class="section-badge">What You Can Do</div>
+                <h2>What You Can Do After Reading This</h2>
+
+                <div class="action-box">
+                    <h3>If you're doing research or customer analysis:</h3>
+                    <ul>
+                        <li>Install Claude Code today (search "Claude Code install" or visit claude.ai/code)</li>
+                        <li>Start with one easy task: "Sort my Downloads folder by file type" to see how it works</li>
+                        <li>Graduate to research: "Read these 5 interview transcripts and summarize top pain points"</li>
+                        <li>Try batch operations: "Extract all mentions of 'pricing' from these customer feedback docs"</li>
+                        <li>Automate a weekly task: "Every Monday, I sort research notes—can Claude Code do this?"</li>
+                    </ul>
+                </div>
+
+                <div class="action-box">
+                    <h3>If you're working with engineering or cross-functional teams:</h3>
+                    <ul>
+                        <li>Use Claude Code to bridge the gap: "Generate a changelog from our Git commits for the stakeholder update"</li>
+                        <li>Automate meeting follow-ups: "Read this transcript and create action items by owner"</li>
+                        <li>Competitor research: "Scrape these 5 competitor websites and compare their pricing"</li>
+                        <li>Share the tool with your team—especially ops, analytics, or anyone drowning in manual work</li>
+                        <li>Document your automations: "Here's what I asked Claude Code to do, and it saved 2 hours"</li>
+                    </ul>
+                </div>
+
+                <div class="action-box">
+                    <h3>If you're new to AI tools or nervous about terminal/code:</h3>
+                    <ul>
+                        <li>Read Lenny's original post (link below)—he walks through installation step-by-step</li>
+                        <li>Start with zero-risk tasks: file organization, renaming, searching</li>
+                        <li>Remember: Claude Code shows you what it's about to do before running it. You approve everything.</li>
+                        <li>Ask it to explain: "What command are you about to run, and what will it do?"</li>
+                        <li>Use it as a learning tool: "Teach me how to organize files by type using terminal commands"</li>
+                        <li>Don't worry about breaking things—start in a test folder, not your main work directory</li>
+                    </ul>
+                </div>
+
+                <p style="margin-top: 32px;">
+                    <strong>The meta-lesson:</strong> Claude Code isn't about replacing you. It's about freeing you from the boring, repetitive parts of your job so you can focus on the strategic, creative, high-impact work only you can do. If you're spending hours every week moving files, synthesizing research, or formatting data—that's time you could be spending designing products, talking to users, or solving hard problems.
+                </p>
+            </section>
+
+            <!-- Section 4: First Principles -->
+            <section class="article-section first-principles">
+                <div class="section-badge">First Principles</div>
+                <h2>Understanding This from First Principles</h2>
+
+                <p>Let me break down why Claude Code matters and how it fits into the bigger picture of AI tools for PMs.</p>
+
+                <div class="principle-card">
+                    <h3>Why does "local" vs. "cloud" matter?</h3>
+                    <p>
+                        Most AI tools live in the cloud. You go to them. You upload files, paste text, describe your situation. This creates friction:
+                    </p>
+                    <ul>
+                        <li>File size limits (can't upload a 500MB video)</li>
+                        <li>Context switching (switching between apps, tabs, tools)</li>
+                        <li>Privacy concerns (uploading sensitive data to third-party servers)</li>
+                        <li>Manual work (you're the one moving data between tools)</li>
+                    </ul>
+                    <p>
+                        <strong>Claude Code inverts this.</strong> The AI comes to your data. It runs on your machine, accessing your files directly. This removes friction and unlocks new capabilities.
+                    </p>
+                    <p>
+                        It's like the difference between describing your messy garage to a professional organizer vs. inviting them into the garage to actually organize it.
+                    </p>
+                </div>
+
+                <div class="principle-card">
+                    <h3>What's the trade-off?</h3>
+                    <p>
+                        Everything has trade-offs. Here's what you give up and gain:
+                    </p>
+                    <p><strong>You give up:</strong></p>
+                    <ul>
+                        <li>Simplicity: Web apps are easier (no installation, no terminal commands)</li>
+                        <li>Mobile access: Claude Code runs on your computer, not your phone</li>
+                        <li>Familiarity: Most people are comfortable with web interfaces</li>
+                    </ul>
+                    <p><strong>You gain:</strong></p>
+                    <ul>
+                        <li>Power: Direct file access, automation, batch operations</li>
+                        <li>Privacy: Files stay on your machine (not uploaded to servers)</li>
+                        <li>Leverage: One command can process 100 files, not just one</li>
+                    </ul>
+                    <p>
+                        <strong>The decision:</strong> Use web AI for thinking and drafting. Use Claude Code for doing and automating.
+                    </p>
+                </div>
+
+                <div class="principle-card">
+                    <h3>When does this tool make sense for PMs?</h3>
+                    <p>
+                        Not every PM needs Claude Code. Here's the litmus test:
+                    </p>
+                    <p><strong>You'll benefit if you:</strong></p>
+                    <ul>
+                        <li>Work with lots of files (research docs, transcripts, spreadsheets)</li>
+                        <li>Do repetitive tasks weekly (organizing, summarizing, extracting data)</li>
+                        <li>Wish you had "a smart assistant who understands my file structure"</li>
+                        <li>Spend 2+ hours/week on manual work that could be automated</li>
+                    </ul>
+                    <p><strong>You can skip it if you:</strong></p>
+                    <ul>
+                        <li>Mostly use web tools (Notion, Figma, Slack) where files live in apps</li>
+                        <li>Don't have repetitive file-based workflows</li>
+                        <li>Prefer simplicity over power (totally valid!)</li>
+                    </ul>
+                    <p>
+                        For me, the tipping point was realizing I spend 3-5 hours every week doing things Claude Code can automate. That's 150-250 hours per year. Even if Claude Code only saves me 50% of that time, it's worth learning.
+                    </p>
+                </div>
+
+                <div class="principle-card">
+                    <h3>What does this signal about the future of PM work?</h3>
+                    <p>
+                        Lenny's article isn't just about a tool. It's about a shift: <strong>AI is moving from "thinking assistant" to "doing assistant."</strong>
+                    </p>
+                    <p>
+                        We've had AI that writes emails, answers questions, and brainstorms ideas. Now we have AI that organizes files, extracts data, and automates workflows. The next frontier? AI that coordinates across tools, runs multi-step processes, and handles end-to-end workflows autonomously.
+                    </p>
+                    <p>
+                        For PMs, this means:
+                    </p>
+                    <ul>
+                        <li>Less time on "glue work" (organizing, synthesizing, formatting)</li>
+                        <li>More time on judgment calls (strategy, trade-offs, user empathy)</li>
+                        <li>Higher expectations for leverage (why manually when you could automate?)</li>
+                    </ul>
+                    <p>
+                        The PMs who thrive will be the ones who learn to think in terms of <strong>automation, delegation, and leverage</strong>. Claude Code is training wheels for that mindset.
+                    </p>
+                </div>
+
+            </section>
+
+            <!-- Original Article Reference -->
+            <section class="article-section original-reference">
+                <div class="reference-box">
+                    <h3>Read the Original Article</h3>
+                    <p>
+                        <strong>"Everyone should be using Claude Code"</strong><br>
+                        By Lenny Rachitsky<br>
+                        From Lenny's Newsletter | Published: January 2026
+                    </p>
+                    <a href="https://www.lennysnewsletter.com/p/everyone-should-be-using-claude-code"
+                       target="_blank" class="cta-button">
+                        Read Original on Lenny's Newsletter →
+                    </a>
+                    <p class="reference-note">
+                        This rewrite is my interpretation for AI Product Managers. For Lenny's full examples, installation walkthrough, and reader use cases, check out his original post.
+                    </p>
+                </div>
+            </section>
+
+        </div>
+    </article>
+
+    <!-- Article Footer -->
+    <section class="article-footer-section">
+        <div class="container">
+            <div class="article-footer-content">
+                <div class="footer-left">
+                    <h3>Want to Learn More?</h3>
+                    <p>I help AI PMs navigate new tools, workflows, and strategies. Let's talk about how you can level up your AI PM game.</p>
+                    <a href="/#contact" class="cta-button">Let's Connect</a>
+                </div>
+                <div class="footer-right">
+                    <h3>More Articles</h3>
+                    <p>I'm rewriting more technical articles with a PM lens. Check out the full collection.</p>
+                    <a href="/articles.html" class="cta-button-secondary">View All Articles</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Jatin Rajvanshi | Vancouver, Canada</p>
+            <p style="margin-top: 12px; font-size: 0.9rem;">
+                <a href="mailto:jatinrajvanshi13@gmail.com">jatinrajvanshi13@gmail.com</a> |
+                <a href="https://www.linkedin.com/in/jatin-rajvanshi/" target="_blank">LinkedIn</a> |
+                <a href="/">Home</a>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>

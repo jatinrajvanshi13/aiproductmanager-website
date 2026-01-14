@@ -69,7 +69,8 @@
 ├── index.html                      # Main landing page (29KB)
 ├── articles.html                   # Articles listing page (NEW)
 ├── articles/                       # Articles directory (NEW)
-│   └── evals-for-ai-agents.html   # First article: AI Agent Evals
+│   ├── claude-code-for-pms.html   # Article: Claude Code for PMs
+│   └── evals-for-ai-agents.html   # Article: AI Agent Evals
 ├── sitemap.xml                     # SEO sitemap for search engines
 ├── robots.txt                      # Search engine crawl instructions
 ├── site.webmanifest               # PWA manifest file
@@ -151,7 +152,7 @@ Showcases expertise in:
 
 **Homepage Section:**
 - Located between Services and Contact sections
-- 2-card grid: 1 published article + 1 "Coming Soon" placeholder
+- 2-card grid: 2 published articles (Claude Code + AI Evals)
 - Tagline: "Complex AI concepts explained like we're grabbing coffee"
 - CTA: "View All Articles" → `/articles.html`
 
@@ -159,7 +160,7 @@ Showcases expertise in:
 - Navigation: Logo/Home (left) + "Get in Touch" (right)
 - Hero section with title and tagline
 - 3-column grid (desktop), 1-column (mobile)
-- Shows 1 real article + 5 coming soon placeholders
+- Shows 2 published articles + 4 coming soon placeholders
 - Each card: Meta info, title, excerpt, tags, link
 
 **Individual Article Structure (`/articles/evals-for-ai-agents.html`):**
@@ -179,11 +180,21 @@ Showcases expertise in:
 - Real-world PM scenarios and analogies
 - Honest about complexity and trade-offs
 
-**First Article:**
-- Topic: "Understanding AI Agent Evals" (Anthropic's evals guide)
-- Original: https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents
-- Covers: Grader types, capability vs regression evals, non-determinism metrics, agent-specific strategies
-- ~2,500 words, 10 min read
+**Published Articles:**
+
+1. **"Why Every AI PM Should Use Claude Code"**
+   - Original: Lenny Rachitsky's Newsletter
+   - URL: https://www.lennysnewsletter.com/p/everyone-should-be-using-claude-code
+   - Topics: Claude Code capabilities, local vs cloud AI, PM use cases, automation
+   - ~2,400 words, 8 min read
+   - Tags: AI Tools, Automation, Productivity
+
+2. **"Understanding AI Agent Evals"**
+   - Original: Anthropic Engineering
+   - URL: https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents
+   - Topics: Grader types, capability vs regression evals, non-determinism metrics, agent-specific strategies
+   - ~2,500 words, 10 min read
+   - Tags: AI Agents, Testing, Product Strategy
 
 **Design:**
 - Matches existing black/white/cyan palette
