@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <title>How to Find Your First 1,000 Users - Rewritten for PMs | Jatin Rajvanshi</title>
+    <meta name="title" content="How to Find Your First 1,000 Users - Explained for Product Managers">
+    <meta name="description" content="Lenny Rachitsky's research on how consumer apps found their first users, translated for Product Managers. The 7 strategies that actually work, with real examples from Tinder, Uber, Netflix and more.">
+    <meta name="keywords" content="First 1000 Users, User Acquisition, Consumer Apps, Product Management, Startup Growth, Lenny Rachitsky, Go-to-Market, Early Adopters, Growth Strategy">
+    <meta name="author" content="Jatin Rajvanshi">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://aiproductmanager.ca/articles/finding-first-users.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://aiproductmanager.ca/articles/finding-first-users.html">
+    <meta property="og:title" content="How to Find Your First 1,000 Users - Rewritten for PMs">
+    <meta property="og:description" content="Lenny's research on consumer app growth, translated for Product Managers. The 7 strategies that work.">
+    <meta property="og:image" content="https://aiproductmanager.ca/og-image.jpg">
+    <meta property="article:published_time" content="2026-01-14T00:00:00-08:00">
+    <meta property="article:author" content="Jatin Rajvanshi">
+    <meta property="article:tag" content="Growth">
+    <meta property="article:tag" content="User Acquisition">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="How to Find Your First 1,000 Users - For PMs">
+    <meta name="twitter:description" content="The 7 strategies that got the biggest consumer apps their first users. Lenny's research, rewritten for PMs.">
+    <meta name="twitter:image" content="https://aiproductmanager.ca/og-image.jpg">
+
+    <!-- Additional SEO -->
+    <meta name="theme-color" content="#00D9FF">
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    <script defer src="/_vercel/insights/script.js"></script>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "How to Find Your First 1,000 Users - Rewritten for Product Managers",
+      "description": "Lenny Rachitsky's research on how consumer apps found their first users, translated for Product Managers",
+      "image": "https://aiproductmanager.ca/og-image.jpg",
+      "datePublished": "2026-01-14",
+      "dateModified": "2026-01-14",
+      "author": {
+        "@type": "Person",
+        "name": "Jatin Rajvanshi",
+        "url": "https://aiproductmanager.ca"
+      },
+      "publisher": {
+        "@type": "Person",
+        "name": "Jatin Rajvanshi"
+      },
+      "about": ["User Acquisition", "Product Management", "Growth Strategy", "Consumer Apps"],
+      "keywords": "First 1000 Users, User Acquisition, Growth, Consumer Apps, Startup Strategy"
+    }
+    </script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-weight: 300;
+            line-height: 1.7;
+            color: #1a1a1a;
+            background: #ffffff;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Syne', sans-serif;
+            letter-spacing: -0.03em;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .article-container {
+            max-width: 800px;
+        }
+
+        /* Navigation */
+        .article-nav {
+            background: #000;
+            padding: 20px 0;
+            border-bottom: 1px solid #222;
+        }
+
+        .article-nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-back, .nav-home {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .nav-back:hover, .nav-home:hover {
+            color: #00D9FF;
+        }
+
+        /* Article Header */
+        .article-header {
+            background: #fafafa;
+            padding: 80px 0 60px;
+        }
+
+        .article-breadcrumb {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 32px;
+        }
+
+        .article-breadcrumb a {
+            color: #00D9FF;
+            text-decoration: none;
+        }
+
+        .article-header h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.15;
+        }
+
+        .article-subtitle {
+            font-size: 1.3rem;
+            color: #666;
+            margin-bottom: 40px;
+            line-height: 1.6;
+            font-weight: 300;
+        }
+
+        .article-meta-bar {
+            background: #fff;
+            border: 2px solid #e5e5e5;
+            border-radius: 12px;
+            padding: 24px;
+            margin-top: 32px;
+        }
+
+        .original-article-box {
+            margin-bottom: 16px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        .meta-label {
+            font-size: 0.85rem;
+            color: #999;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .original-link {
+            color: #00D9FF;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 2px solid #00D9FF;
+        }
+
+        .original-link:hover {
+            color: #000;
+        }
+
+        .meta-date {
+            display: block;
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 8px;
+        }
+
+        .reading-info {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* Article Content */
+        .article-content {
+            padding: 80px 0;
+        }
+
+        .article-section {
+            margin-bottom: 80px;
+        }
+
+        .section-badge {
+            display: inline-block;
+            background: rgba(0, 217, 255, 0.2);
+            color: #000;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 24px;
+        }
+
+        .article-section h2 {
+            font-size: 2.2rem;
+            margin-bottom: 24px;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        .article-section h3 {
+            font-size: 1.6rem;
+            margin-bottom: 16px;
+            margin-top: 32px;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+
+        .article-section p {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .article-section ul, .article-section ol {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            margin-bottom: 24px;
+            margin-left: 24px;
+            color: #333;
+        }
+
+        .article-section li {
+            margin-bottom: 12px;
+        }
+
+        .article-section strong {
+            font-weight: 600;
+            color: #000;
+        }
+
+        .callout-box {
+            background: #fff9e6;
+            border-left: 4px solid #00D9FF;
+            padding: 32px;
+            margin: 32px 0;
+            border-radius: 8px;
+        }
+
+        .callout-box strong {
+            display: block;
+            font-size: 1.2rem;
+            margin-bottom: 16px;
+            color: #000;
+        }
+
+        .callout-box ul {
+            margin: 0;
+        }
+
+        .callout-box li {
+            margin-bottom: 8px;
+        }
+
+        .takeaway-card, .action-box, .principle-card {
+            background: #fff;
+            border: 2px solid #e5e5e5;
+            border-radius: 12px;
+            padding: 32px;
+            margin-bottom: 24px;
+        }
+
+        .takeaway-card h3, .action-box h3, .principle-card h3 {
+            margin-top: 0;
+        }
+
+        .strategy-number {
+            display: inline-block;
+            width: 36px;
+            height: 36px;
+            background: #00D9FF;
+            color: #000;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 36px;
+            font-weight: 700;
+            font-size: 1rem;
+            margin-right: 12px;
+        }
+
+        .example-box {
+            background: #f8f8f8;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 16px 0;
+        }
+
+        .example-box strong {
+            color: #00D9FF;
+        }
+
+        .reference-box {
+            background: #000;
+            color: #fff;
+            padding: 48px;
+            border-radius: 16px;
+            text-align: center;
+        }
+
+        .reference-box h3 {
+            color: #00D9FF;
+            margin-bottom: 20px;
+        }
+
+        .reference-box p {
+            margin-bottom: 24px;
+        }
+
+        .reference-box .cta-button {
+            display: inline-block;
+            padding: 18px 48px;
+            background: #00D9FF;
+            color: #000;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: 2px solid #00D9FF;
+        }
+
+        .reference-box .cta-button:hover {
+            background: #fff;
+            border-color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 40px rgba(255, 255, 255, 0.3);
+        }
+
+        .reference-note {
+            font-size: 0.95rem;
+            color: #999;
+            margin-top: 24px;
+        }
+
+        /* Article Footer Section */
+        .article-footer-section {
+            background: #fafafa;
+            padding: 80px 0;
+        }
+
+        .article-footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 48px;
+        }
+
+        .footer-left h3, .footer-right h3 {
+            font-size: 1.8rem;
+            margin-bottom: 16px;
+        }
+
+        .footer-left p {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 24px;
+            line-height: 1.7;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 18px 48px;
+            background: #000;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: 2px solid #000;
+        }
+
+        .cta-button:hover {
+            background: #fff;
+            color: #000;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .cta-button-secondary {
+            display: inline-block;
+            padding: 18px 48px;
+            background: #fff;
+            color: #000;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: 2px solid #000;
+        }
+
+        .cta-button-secondary:hover {
+            background: #000;
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Footer */
+        footer {
+            padding: 60px 0;
+            text-align: center;
+            background: #000;
+            color: #666;
+            border-top: 1px solid #222;
+        }
+
+        footer p {
+            margin-bottom: 12px;
+        }
+
+        footer a {
+            color: #00D9FF;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #fff;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .article-header {
+                padding: 60px 0 40px;
+            }
+
+            .article-content {
+                padding: 60px 0;
+            }
+
+            .article-section {
+                margin-bottom: 60px;
+            }
+
+            .article-section h2 {
+                font-size: 1.8rem;
+            }
+
+            .article-section h3 {
+                font-size: 1.4rem;
+            }
+
+            .article-section p, .article-section ul, .article-section ol {
+                font-size: 1.05rem;
+            }
+
+            .takeaway-card, .action-box, .principle-card, .callout-box {
+                padding: 24px;
+            }
+
+            .reference-box {
+                padding: 32px 24px;
+            }
+
+            .article-footer-content {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="article-nav">
+        <div class="container">
+            <a href="/articles.html" class="nav-back">&larr; All Articles</a>
+            <a href="/" class="nav-home">Home</a>
+        </div>
+    </nav>
+
+    <!-- Article Header -->
+    <header class="article-header">
+        <div class="container article-container">
+            <div class="article-breadcrumb">
+                <a href="/">Home</a> / <a href="/articles.html">Articles</a> / Finding First Users
+            </div>
+
+            <h1>How to Find Your First 1,000 Users</h1>
+            <p class="article-subtitle">
+                Lenny Rachitsky's legendary research on how the biggest consumer apps found their early adopters, rewritten for Product Managers launching new products.
+            </p>
+
+            <div class="article-meta-bar">
+                <div class="original-article-box">
+                    <span class="meta-label">Original Article</span>
+                    <a href="https://www.lennysnewsletter.com/p/consumer-business-find-first-users"
+                       target="_blank" class="original-link">
+                        "How to kickstart and scale a consumer business: Find your early adopters" by Lenny Rachitsky
+                    </a>
+                    <span class="meta-date">Part of Lenny's Newsletter series on scaling consumer businesses</span>
+                </div>
+                <div class="reading-info">
+                    <span>&#9749; 12 min read</span>
+                    <span>Rewritten: January 14, 2026</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Article Content -->
+    <article class="article-content">
+        <div class="container article-container">
+
+            <!-- Section 1: Why This Matters -->
+            <section class="article-section why-matters">
+                <div class="section-badge">Why This Matters to You</div>
+                <h2>Why PMs Should Study Early User Acquisition</h2>
+
+                <p>
+                    Here's something that doesn't get talked about enough in PM circles: <strong>finding your first users is fundamentally different from scaling to your millionth.</strong> The growth strategies that work at scale (SEO, paid ads, viral loops) are almost useless when you're starting from zero.
+                </p>
+
+                <p>
+                    Lenny Rachitsky (former Airbnb PM, now runs the most popular product newsletter) spent months researching this question. He interviewed founders, dug through archives, and compiled first-hand accounts of how essentially every major consumer app got their first 1,000 users.
+                </p>
+
+                <p>
+                    What he found surprised me: <strong>there are really only 7 strategies that work.</strong> That's it. Whether you're building the next Tinder, Uber, or Notion, you're picking from the same short menu. The difference is in execution.
+                </p>
+
+                <p>
+                    Why does this matter for you as a PM? Because at some point, you'll launch something new. A new feature, a new product line, an internal tool that needs adoption. Understanding these strategies will help you advise founders, plan launches, and avoid the trap of thinking "we'll just do marketing later."
+                </p>
+
+                <div class="callout-box">
+                    <strong>The TL;DR for PMs:</strong>
+                    <ul>
+                        <li>Only 7 strategies account for how consumer apps find their first users</li>
+                        <li>Most successful startups relied on just ONE strategy, not a mix</li>
+                        <li>The method that gets your first 1,000 users is different from what gets you to 10,000</li>
+                        <li>"Doing things that don't scale" is actually the playbook, not a temporary hack</li>
+                        <li>Your personal network is more powerful than you think</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Section 2: Key Takeaways -->
+            <section class="article-section key-takeaways">
+                <div class="section-badge">Key Takeaways</div>
+                <h2>The 7 Strategies That Actually Work</h2>
+
+                <p>
+                    Lenny analyzed over 100 consumer companies and found that <strong>99% of B2C startups' early growth came from these seven strategies.</strong> Think of this as a menu: your job is to pick one or two, commit fully, and iterate until something works.
+                </p>
+
+                <div class="takeaway-card">
+                    <h3><span class="strategy-number">1</span> Friends, Colleagues & Your Network</h3>
+                    <p><strong>What it is:</strong> Reaching out personally to people you already know. This was a large driver of early growth for about 20% of successful startups.</p>
+
+                    <p><strong>Why it works:</strong> Your network trusts you. They'll try your product as a favor, give honest feedback, and refer others if they like it. It's the fastest, cheapest way to get your first users.</p>
+
+                    <div class="example-box">
+                        <strong>Yelp's Story:</strong> Their initial users came almost entirely from inviting former PayPal coworkers. The founders had built credibility, and their ex-colleagues were willing to try something new. Don't underestimate the power of one's professional referral network.
+                    </div>
+
+                    <p><strong>PM takeaway:</strong> Before planning a fancy launch, map your team's network. Who do you know that fits your target user? Can each team member personally onboard 10 users?</p>
+                </div>
+
+                <div class="takeaway-card">
+                    <h3><span class="strategy-number">2</span> Go Where Users Are (Offline)</h3>
+                    <p><strong>What it is:</strong> Street teams, events, campuses, conferences. Physically showing up where your target users gather.</p>
+
+                    <p><strong>Why it works:</strong> You can demo the product, answer questions immediately, and create memorable moments. Plus, people are more likely to try something when a human is standing in front of them.</p>
+
+                    <div class="example-box">
+                        <strong>Tinder's Story:</strong> Whitney Wolfe and Justin Mateen literally ran around USC pitching Tinder to sororities and fraternities. The hook was irresistible: see other single people on campus and know if they're interested in you. They created the "Tinder University Program"&mdash;interview influential students, send them swag (T-shirts, stickers, keychains), and make them Brand Ambassadors. This exact playbook repeated at every new campus.
+                    </div>
+
+                    <div class="example-box">
+                        <strong>Uber's Story:</strong> Street teams were huge early on. They went to Caltrain stations and handed out referral codes. Travis Kalanick famously went to Twitter HQ personally to hand out codes.
+                    </div>
+
+                    <div class="example-box">
+                        <strong>Snapchat's Story:</strong> Evan Spiegel showed the app to people one-on-one, giving tutorials and explaining why it was fun. When home in Pacific Palisades, he'd go to the shopping mall and hand out flyers advertising Snapchat. He was willing to try anything.
+                    </div>
+
+                    <p><strong>PM takeaway:</strong> Where do your target users physically gather? Conferences, meetups, college campuses, coworking spaces? Can you show up there?</p>
+                </div>
+
+                <div class="takeaway-card">
+                    <h3><span class="strategy-number">3</span> Go Where Users Are (Online)</h3>
+                    <p><strong>What it is:</strong> Communities, forums, Reddit, Discord servers, Facebook groups, niche websites. Finding the digital watering holes where your users already hang out.</p>
+
+                    <p><strong>Why it works:</strong> Your target users have already self-selected into these communities. You're fishing where the fish are, instead of hoping they'll find you.</p>
+
+                    <div class="example-box">
+                        <strong>Netflix's Story:</strong> Corey Bridges (early growth hire) realized the only way to find DVD owners was in fringe communities of the internet: user groups, bulletin boards, web forums. His plan was to "infiltrate these communities"&mdash;become a genuine member, contribute value, and naturally introduce Netflix.
+                    </div>
+
+                    <div class="example-box">
+                        <strong>Product Hunt's Story:</strong> They built a community before launching the product. It started as a simple mailing list of new products. By the time they launched the full site, they had a warm audience waiting for it.
+                    </div>
+
+                    <p><strong>PM takeaway:</strong> Map 5-10 online communities where your target users hang out. Join them. Understand the culture before promoting anything. Value first, pitch second.</p>
+                </div>
+
+                <div class="takeaway-card">
+                    <h3><span class="strategy-number">4</span> Invite Influencers</h3>
+                    <p><strong>What it is:</strong> Find people with existing audiences who match your target demographic. Give them early access, special treatment, and reasons to share.</p>
+
+                    <p><strong>Why it works:</strong> One influential person can bring hundreds or thousands of their followers. It's leverage&mdash;you're borrowing someone else's trust and reach.</p>
+
+                    <div class="example-box">
+                        <strong>Twitter's Story:</strong> They specifically courted authors who already had popular blogs. These early adopters had audiences and weren't afraid to share their thoughts publicly.
+                    </div>
+
+                    <div class="example-box">
+                        <strong>Instagram's Story:</strong> They focused on photographers with high-quality portfolios. The product was designed for visual creators, so seeding it with beautiful content from respected photographers made it aspirational for everyone else.
+                    </div>
+
+                    <p><strong>PM takeaway:</strong> Who are the 10 most influential people in your target space? What would make them excited to try your product? How can you make them look good?</p>
+                </div>
+
+                <div class="takeaway-card">
+                    <h3><span class="strategy-number">5</span> Get Press & Media Coverage</h3>
+                    <p><strong>What it is:</strong> Getting written about in publications, blogs, podcasts, or news outlets that your target users read.</p>
+
+                    <p><strong>Why it works:</strong> Press provides credibility and reach simultaneously. Being featured in a respected publication signals "this is worth paying attention to."</p>
+
+                    <div class="example-box">
+                        <strong>Airbnb's Story:</strong> The founders (who were designers) created cereal boxes themed around the 2008 election&mdash;"Obama O's" and "Cap'n McCain's." They sent these to hundreds of tech bloggers. The creative stunt got them dozens of brand mentions and established them as scrappy, creative founders worth watching.
+                    </div>
+
+                    <p><strong>PM takeaway:</strong> Press requires a story, not just a product. What's the narrative angle? What makes this newsworthy? Can you tie into a current event or trend?</p>
+                </div>
+
+                <div class="takeaway-card">
+                    <h3><span class="strategy-number">6</span> Create FOMO & Exclusivity</h3>
+                    <p><strong>What it is:</strong> Waitlists, invite-only access, limited availability. Making your product feel scarce and desirable.</p>
+
+                    <p><strong>Why it works:</strong> Scarcity creates demand. If everyone can have it, it's not special. If you need an invite, suddenly people want in.</p>
+
+                    <div class="example-box">
+                        <strong>Clubhouse, Pinterest, Instagram's Story:</strong> All three used invite-only systems. The waiting list and invites fueled interest. People posted on Twitter asking for invites. The exclusivity became part of the product's mystique.
+                    </div>
+
+                    <p><strong>PM takeaway:</strong> This works best when there's genuine value worth waiting for. Fake scarcity backfires. But if your product genuinely benefits from curated early users, lean into it.</p>
+                </div>
+
+                <div class="takeaway-card">
+                    <h3><span class="strategy-number">7</span> Get Physical Placement</h3>
+                    <p><strong>What it is:</strong> Flyers, stickers, signs, posters. Physical artifacts in the real world that drive awareness.</p>
+
+                    <p><strong>Why it works:</strong> Physical presence creates legitimacy and repeated exposure. Seeing a sticker on a laptop or a flyer in a coffee shop normalizes the product.</p>
+
+                    <div class="example-box">
+                        <strong>DoorDash's Story:</strong> The very first version was a website called paloaltodelivery.com with PDF'd menus from local restaurants. Tony Xu and team printed flyers advertising $6 delivery and plastered them all over Stanford University. Before building the app, they just wanted to see if demand existed. Flyers were the test.
+                    </div>
+
+                    <p><strong>PM takeaway:</strong> Sometimes the lowest-tech solution is the right one. Where could physical placement create awareness for your product?</p>
+                </div>
+
+            </section>
+
+            <!-- Section 3: What You Can Do -->
+            <section class="article-section action-items">
+                <div class="section-badge">What You Can Do</div>
+                <h2>How to Apply This to Your Work</h2>
+
+                <div class="action-box">
+                    <h3>If you're launching a new product or feature:</h3>
+                    <ul>
+                        <li>Pick ONE strategy to start, not all seven. Lenny found most successful startups relied on a single channel.</li>
+                        <li>Map your team's network&mdash;can each person personally onboard 5-10 users?</li>
+                        <li>Identify where your target users already gather (online communities, events, forums)</li>
+                        <li>Define what "success" looks like for your first 100 users before thinking about 1,000</li>
+                        <li>Set a timeline: if this strategy isn't working in 2-4 weeks, move to the next one on the list</li>
+                    </ul>
+                </div>
+
+                <div class="action-box">
+                    <h3>If you're advising a founder or early-stage team:</h3>
+                    <ul>
+                        <li>Ask: "What are you doing that doesn't scale?" If they can't answer, they're probably not doing enough</li>
+                        <li>Challenge assumptions about paid marketing&mdash;it rarely works at the 0-1,000 stage</li>
+                        <li>Share specific examples from this article to illustrate what "going direct" looks like</li>
+                        <li>Help them identify their "Tinder sorority moment"&mdash;where is the concentrated cluster of ideal users?</li>
+                        <li>Remind them: the strategy that gets first 1,000 users is different from what scales to 1 million</li>
+                    </ul>
+                </div>
+
+                <div class="action-box">
+                    <h3>If you're working on internal product adoption:</h3>
+                    <ul>
+                        <li>The same principles apply to internal tools. Find your early adopters manually.</li>
+                        <li>Identify the "influencers" in your org&mdash;who do others follow? Get them on board first.</li>
+                        <li>Create exclusivity: "We're piloting with top performers" beats "Everyone has to use this."</li>
+                        <li>Go where users are: Slack channels, all-hands meetings, lunch-and-learns</li>
+                        <li>Personal onboarding scales better than documentation for the first 50 users</li>
+                    </ul>
+                </div>
+
+                <p style="margin-top: 32px;">
+                    <strong>The meta-lesson:</strong> There's no magic to early user acquisition. It's work. Manual, unscalable, sometimes uncomfortable work. The founders who succeed are the ones willing to hand out flyers, send cold emails, crash parties, and personally onboard every single early user. Embrace the grind.
+                </p>
+            </section>
+
+            <!-- Section 4: First Principles -->
+            <section class="article-section first-principles">
+                <div class="section-badge">First Principles</div>
+                <h2>Understanding This from First Principles</h2>
+
+                <p>Let me break down why these strategies work and when to use each one.</p>
+
+                <div class="principle-card">
+                    <h3>Why does "doing things that don't scale" work?</h3>
+                    <p>
+                        At the early stage, your biggest risks are: (1) building something nobody wants, and (2) not learning fast enough to pivot.
+                    </p>
+                    <p>
+                        Unscalable tactics&mdash;like personally onboarding users&mdash;solve both problems. You get direct feedback, see exactly where users struggle, and build relationships that turn customers into evangelists.
+                    </p>
+                    <p>
+                        <strong>Scalable tactics (ads, SEO, content marketing) assume you've already figured out product-market fit.</strong> They amplify what's working. But if you haven't found fit yet, you're just burning money to acquire users who won't stick around.
+                    </p>
+                </div>
+
+                <div class="principle-card">
+                    <h3>How do you choose which strategy to try first?</h3>
+                    <p>
+                        Match the strategy to your product and strengths:
+                    </p>
+                    <ul>
+                        <li><strong>Network effects matter?</strong> Start with concentrated communities (like Tinder at USC)</li>
+                        <li><strong>Visual product?</strong> Go after influencers who create content (like Instagram with photographers)</li>
+                        <li><strong>Professional tool?</strong> Leverage your team's industry network (like Yelp with PayPal alumni)</li>
+                        <li><strong>Local service?</strong> Physical presence and street teams (like Uber at Caltrain)</li>
+                        <li><strong>Niche audience?</strong> Find their online communities (like Netflix in DVD forums)</li>
+                    </ul>
+                    <p>
+                        <strong>Start with what you can do well.</strong> If your team has strong networks, use them. If you're great at content, build a community first. Play to your strengths while you figure out the product.
+                    </p>
+                </div>
+
+                <div class="principle-card">
+                    <h3>When do you switch from unscalable to scalable?</h3>
+                    <p>
+                        The rough answer: when you have evidence of product-market fit. Signs include:
+                    </p>
+                    <ul>
+                        <li>Users are coming back without prompting</li>
+                        <li>Word-of-mouth is starting to work (users refer friends)</li>
+                        <li>You've found a repeatable acquisition motion</li>
+                        <li>Retention curves flatten (people stick around)</li>
+                    </ul>
+                    <p>
+                        At that point, you've proven the product works. Now you can pour fuel (money, automation, scale) on the fire. But scaling before fit is how startups burn through funding with nothing to show for it.
+                    </p>
+                </div>
+
+                <div class="principle-card">
+                    <h3>Why do most startups find success from just one channel?</h3>
+                    <p>
+                        Because focus wins. Trying all seven strategies means doing each one poorly.
+                    </p>
+                    <p>
+                        Early-stage teams have limited time, money, and people. Spreading across multiple channels dilutes everything. Better to go deep on one approach, learn what works, iterate, and only move on if it's clearly failing.
+                    </p>
+                    <p>
+                        <strong>The exception:</strong> Sometimes strategies complement each other. Press + community can work together. Influencers + exclusivity reinforce each other. But start with one, prove it, then layer.
+                    </p>
+                </div>
+
+            </section>
+
+            <!-- Original Article Reference -->
+            <section class="article-section original-reference">
+                <div class="reference-box">
+                    <h3>Read the Original Article</h3>
+                    <p>
+                        <strong>"How to kickstart and scale a consumer business: Find your early adopters"</strong><br>
+                        By Lenny Rachitsky<br>
+                        Part of his series on scaling consumer businesses
+                    </p>
+                    <a href="https://www.lennysnewsletter.com/p/consumer-business-find-first-users"
+                       target="_blank" class="cta-button">
+                        Read Original on Lenny's Newsletter &rarr;
+                    </a>
+                    <p class="reference-note">
+                        This rewrite is my interpretation for Product Managers. Lenny's original includes more examples, data, and a companion piece on how the biggest apps got their first 1,000 users. Highly recommend subscribing to his newsletter.
+                    </p>
+                </div>
+            </section>
+
+        </div>
+    </article>
+
+    <!-- Article Footer -->
+    <section class="article-footer-section">
+        <div class="container">
+            <div class="article-footer-content">
+                <div class="footer-left">
+                    <h3>Found this helpful?</h3>
+                    <p>Let's talk about how you can apply this to your product. I offer free mentorship for AI PMs in Canada.</p>
+                    <a href="/#contact" class="cta-button">Let's Connect</a>
+                </div>
+                <div class="footer-right">
+                    <h3>More Articles</h3>
+                    <p>I'm rewriting more essential articles with a PM lens. Check out the full collection.</p>
+                    <a href="/articles.html" class="cta-button-secondary">View All Articles</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Jatin Rajvanshi | Vancouver, Canada</p>
+            <p style="margin-top: 12px; font-size: 0.9rem;">
+                <a href="mailto:jatinrajvanshi13@gmail.com">jatinrajvanshi13@gmail.com</a> |
+                <a href="https://www.linkedin.com/in/jatin-rajvanshi/" target="_blank">LinkedIn</a> |
+                <a href="/">Home</a>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
