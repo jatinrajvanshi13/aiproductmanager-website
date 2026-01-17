@@ -30,7 +30,7 @@
     <meta name="twitter:image" content="https://aiproductmanager.ca/og-image.jpg">
 
     <!-- Additional SEO -->
-    <meta name="theme-color" content="#00D9FF">
+    <meta name="theme-color" content="#2563EB">
 
     <!-- Favicons -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -38,7 +38,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
     <script defer src="/_vercel/insights/script.js"></script>
 
     <!-- Structured Data -->
@@ -82,7 +82,7 @@
         }
 
         h1, h2, h3 {
-            font-family: 'Syne', sans-serif;
+            font-family: 'Poppins', sans-serif;
             letter-spacing: -0.03em;
         }
 
@@ -97,34 +97,78 @@
         }
 
         /* Navigation */
-        .article-nav {
-            background: #000;
-            padding: 20px 0;
-            border-bottom: 1px solid #222;
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 16px 0;
+            border-bottom: 1px solid #e5e5e5;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
         }
 
-        .article-nav .container {
+        .navbar .container {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        .nav-back, .nav-home {
-            color: #fff;
+        .navbar-brand {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: #1a1a1a;
             text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
-            font-size: 0.95rem;
         }
 
-        .nav-back:hover, .nav-home:hover {
-            color: #00D9FF;
+        .navbar-nav {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .navbar-nav a {
+            color: #555;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 400;
+            transition: color 0.2s ease;
+        }
+
+        .navbar-nav a:hover {
+            color: #1a1a1a;
+        }
+
+        .navbar-nav .nav-cta {
+            background: #1a1a1a;
+            color: #fff !important;
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-weight: 500;
+        }
+
+        .navbar-nav .nav-cta:hover {
+            background: #2563EB;
+        }
+
+        @media (max-width: 768px) {
+            .navbar-nav {
+                gap: 16px;
+            }
+            .navbar-nav a:not(.nav-cta) {
+                display: none;
+            }
         }
 
         /* Article Header */
         .article-header {
             background: #fafafa;
-            padding: 80px 0 60px;
+            padding: 120px 0 60px;
         }
 
         .article-breadcrumb {
@@ -134,7 +178,7 @@
         }
 
         .article-breadcrumb a {
-            color: #00D9FF;
+            color: #2563EB;
             text-decoration: none;
         }
 
@@ -178,10 +222,10 @@
         }
 
         .original-link {
-            color: #00D9FF;
+            color: #2563EB;
             text-decoration: none;
             font-weight: 500;
-            border-bottom: 2px solid #00D9FF;
+            border-bottom: 2px solid #2563EB;
         }
 
         .original-link:hover {
@@ -264,8 +308,8 @@
         }
 
         .callout-box {
-            background: #fff9e6;
-            border-left: 4px solid #00D9FF;
+            background: #F0F7FF;
+            border-left: 4px solid #2563EB;
             padding: 32px;
             margin: 32px 0;
             border-radius: 8px;
@@ -307,7 +351,7 @@
         }
 
         .reference-box h3 {
-            color: #00D9FF;
+            color: #2563EB;
             margin-bottom: 20px;
         }
 
@@ -318,18 +362,19 @@
         .reference-box .cta-button {
             display: inline-block;
             padding: 18px 48px;
-            background: #00D9FF;
-            color: #000;
+            background: #2563EB;
+            color: #fff;
             text-decoration: none;
             border-radius: 50px;
             font-weight: 500;
             font-size: 1.1rem;
             transition: all 0.3s ease;
-            border: 2px solid #00D9FF;
+            border: 2px solid #2563EB;
         }
 
         .reference-box .cta-button:hover {
             background: #fff;
+            color: #000;
             border-color: #fff;
             transform: translateY(-2px);
             box-shadow: 0 10px 40px rgba(255, 255, 255, 0.3);
@@ -337,7 +382,7 @@
 
         .reference-note {
             font-size: 0.95rem;
-            color: #999;
+            color: #ccc;
             margin-top: 24px;
         }
 
@@ -419,7 +464,7 @@
         }
 
         footer a {
-            color: #00D9FF;
+            color: #2563EB;
             text-decoration: none;
         }
 
@@ -470,10 +515,14 @@
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="article-nav">
+    <nav class="navbar">
         <div class="container">
-            <a href="/articles.html" class="nav-back">← All Articles</a>
-            <a href="/" class="nav-home">Home</a>
+            <a href="/" class="navbar-brand">Jatin Rajvanshi</a>
+            <ul class="navbar-nav">
+                <li><a href="/articles.html">← All Articles</a></li>
+                <li><a href="/">Home</a></li>
+                <li><a href="/#contact" class="nav-cta">Get in Touch</a></li>
+            </ul>
         </div>
     </nav>
 

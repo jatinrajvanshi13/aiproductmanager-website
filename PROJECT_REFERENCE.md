@@ -2,7 +2,7 @@
 
 **Project Owner**: Jatin Rajvanshi
 **Domain**: https://aiproductmanager.ca
-**Last Updated**: January 12, 2026
+**Last Updated**: January 16, 2026
 **Purpose**: Personal landing page for free AI Product Management mentorship
 
 ---
@@ -70,7 +70,8 @@
 ├── articles.html                   # Articles listing page (NEW)
 ├── articles/                       # Articles directory (NEW)
 │   ├── claude-code-for-pms.html   # Article: Claude Code for PMs
-│   └── evals-for-ai-agents.html   # Article: AI Agent Evals
+│   ├── evals-for-ai-agents.html   # Article: AI Agent Evals
+│   └── finding-first-users.html   # Article: How to Find Your First 1,000 Users
 ├── sitemap.xml                     # SEO sitemap for search engines
 ├── robots.txt                      # Search engine crawl instructions
 ├── site.webmanifest               # PWA manifest file
@@ -93,12 +94,26 @@
 
 ## ✨ Features Implemented
 
+### **Navigation Bar (Global)**
+- Fixed position, white background with blur effect
+- Left: Brand name "Jatin Rajvanshi" (links to home)
+- Right: Articles | About | Services | Get in Touch (CTA button)
+- Scroll effect: Adds shadow and border on scroll
+- Mobile: Hamburger menu with dropdown
+- Consistent across all pages
+
 ### **1. Hero Section**
 - Bold headline: "Start Your Journey in AI Product Management"
 - Tagline emphasizing tech/non-tech bridge and free mentorship
 - Call-to-action: "Let's Connect" (smooth scroll to contact form)
 
-### **2. About Section**
+### **2. Must-Read Articles for AI PMs**
+- Located right after Hero section (prominent placement)
+- 3-card grid: 3 published articles (Claude Code + AI Evals + First 1,000 Users)
+- Tagline: "Complex AI concepts explained like we're grabbing coffee"
+- CTA: "View All Articles" → `/articles.html`
+
+### **3. About Section**
 - Current role: Lead PM for AI Agents at TELUS (Chief AI Office)
 - Journey: Delhi → 7 Indian cities → Tokyo → Vancouver
 - Education: B.Tech (VIT) + MBA (UBC Sauder)
@@ -121,7 +136,7 @@
 - Logos from Logo.dev API with grayscale → color hover effect
 - Descriptive SEO-friendly alt texts
 
-### **3. Services Section**
+### **4. Services Section**
 6 service cards:
 1. Breaking Into AI PM (tech/non-tech transitions)
 2. Resume & Portfolio Review (Canadian market focus)
@@ -130,14 +145,14 @@
 5. For Immigrants in Canada (visa, culture, networking)
 6. Startup to Big Tech navigation
 
-### **4. Technologies & Domains Section**
+### **5. Technologies & Domains Section**
 Showcases expertise in:
 - AI/ML: GenAI, LLMs, RAG Systems, AI Agents
 - Industries: Aviation, eCommerce, EdTech, HRTech, Logistics, Finance
 - Product Types: Chatbots, CRMs, Marketplaces, SaaS, Mobile Apps
 - Tech Background: Java, Python, Microservices, APIs, Blockchain
 
-### **5. Contact Section**
+### **6. Contact Section**
 - Headline: "Let's Talk"
 - Subtitle: "No sales pitch. No automation. Just real conversations."
 - Personal message: "Talking to people gives me joy. That's why I'm doing this."
@@ -148,19 +163,13 @@ Showcases expertise in:
 - CTA Button: "Fill Out Quick Form" → Google Form (opens new tab)
 - Commitment: "I'll personally email you within 24 hours"
 
-### **6. Must-Read Articles for AI PMs (NEW - January 13, 2026)**
-
-**Homepage Section:**
-- Located between Services and Contact sections
-- 2-card grid: 2 published articles (Claude Code + AI Evals)
-- Tagline: "Complex AI concepts explained like we're grabbing coffee"
-- CTA: "View All Articles" → `/articles.html`
+### **Articles System (Extended Details)**
 
 **Articles Listing Page (`/articles.html`):**
 - Navigation: Logo/Home (left) + "Get in Touch" (right)
 - Hero section with title and tagline
 - 3-column grid (desktop), 1-column (mobile)
-- Shows 2 published articles + 4 coming soon placeholders
+- Shows 3 published articles + coming soon placeholders
 - Each card: Meta info, title, excerpt, tags, link
 
 **Individual Article Structure (`/articles/evals-for-ai-agents.html`):**
@@ -196,11 +205,18 @@ Showcases expertise in:
    - ~2,500 words, 10 min read
    - Tags: AI Agents, Testing, Product Strategy
 
+3. **"How to Find Your First 1,000 Users"**
+   - Original: Lenny Rachitsky's Newsletter
+   - URL: https://www.lennysnewsletter.com/p/how-the-biggest-consumer-apps-got
+   - Topics: 7 user acquisition strategies, supply vs demand side, case studies from Tinder, Uber, Netflix, DoorDash
+   - ~2,800 words, 10 min read
+   - Tags: Growth, User Acquisition, Go-to-Market
+
 **Design:**
-- Matches existing black/white/cyan palette
+- Matches existing black/white/navy blue palette
 - Cards: 2px border, 16px radius, hover lift effect
-- Section badges: Cyan background (20% opacity)
-- Callout boxes: Yellow background, cyan left border
+- Section badges: Navy blue background (20% opacity)
+- Callout boxes: Light blue background (#F0F7FF), navy blue left border
 - Max-width: 800px for article content (narrower for readability)
 - Larger fonts: 1.15rem body, 1.8 line-height
 
@@ -242,7 +258,7 @@ Showcases expertise in:
 - GPS: 49.2827, -123.1207 (Vancouver coordinates)
 
 **Additional:**
-- Theme Color: #00D9FF (cyan accent)
+- Theme Color: #2563EB (navy blue accent)
 - Language: en (English)
 
 ### **Structured Data (JSON-LD)**
@@ -369,21 +385,21 @@ git push origin main
 
 ### **Color Palette**
 - **Primary**: #000000 (Black) - Headings, buttons, footer background
-- **Accent**: #00D9FF (Cyan) - Highlights, hover effects, links
+- **Accent**: #2563EB (Navy Blue) - Highlights, hover effects, links (professional, trustworthy)
 - **Text**: #1a1a1a (Near black) - Body text
 - **Secondary Text**: #666, #555, #999 - Lighter text
-- **Backgrounds**: #ffffff (White), #fafafa (Light gray), #fff9e6 (Warm yellow for callout)
+- **Backgrounds**: #ffffff (White), #fafafa (Light gray), #F0F7FF (Light blue for callouts)
 - **Borders**: #e5e5e5, #333
 
 ### **Typography**
 **Headings (H1, H2, H3):**
-- Font: **Syne** (geometric, artistic, distinctive)
-- Weights: 400, 600, 700, 800
-- Letter spacing: -0.03em to -0.04em (tight, modern)
+- Font: **Poppins** (clean, professional, universally appealing)
+- Weights: 300, 400, 500, 600, 700
+- Letter spacing: -0.03em (tight, modern)
 
 **Body Text:**
 - Font: **Inter** (clean, readable)
-- Weights: 200, 300, 400, 500, 600 (mostly 300 for thin, elegant look)
+- Weights: 300, 400, 500 (light for elegant look)
 - Letter spacing: 0.01em to 0.03em (airy, spacious)
 - Line height: 1.7-1.9 (generous for readability)
 
@@ -397,13 +413,13 @@ git push origin main
 ### **Design Philosophy**
 - **Clean & Minimal**: Black/white base, single accent color
 - **Editorial Feel**: Thin fonts, generous spacing, high-fashion magazine aesthetic
-- **Artistic**: Syne font gives unique character
-- **Professional**: Strong hierarchy, clear sections
+- **Professional**: Poppins font for clean, universally appealing headings
+- **Strong Hierarchy**: Clear sections with visual distinction
 - **Trust-Building**: Company logos, credentials, real story
 
 ### **Layout**
 - **Max Width**: 1200px (main container)
-- **Sections**: Hero, About, Services, Expertise, Contact, Footer
+- **Sections**: Hero, Articles, About, Services, Expertise, Contact, Footer
 - **Spacing**: 80-120px between sections
 - **Responsive Breakpoint**: 768px (mobile)
 
@@ -417,14 +433,14 @@ git push origin main
 
 - **Cards** (Services):
   - Border: 2px solid #e5e5e5
-  - Hover: Cyan border, lift effect, shadow
+  - Hover: Navy blue border, lift effect, shadow
 
 - **Logos**:
   - Default: Grayscale (100%) + 70% opacity
   - Hover: Full color + 100% opacity
 
 - **Links**:
-  - Cyan color (#00D9FF)
+  - Navy blue color (#2563EB)
   - Underline (2px solid)
   - Opens in new tab (external links)
 
@@ -437,12 +453,31 @@ git push origin main
 
 ## 🚧 Future Enhancements
 
-### **Recently Implemented (January 13, 2026)**
+### **Recently Implemented (January 16, 2026)**
+
+**✅ Design System Overhaul**
+- **Font Update**: Syne → Poppins for headings (more professional, universally appealing)
+- **Color Scheme**: Cyan (#00D9FF) → Navy Blue (#2563EB) for a more professional look
+- **Callout Boxes**: Yellow (#fff9e6) → Light Blue (#F0F7FF) to match new palette
+- **Fixed Navbar**: Added consistent navigation across all pages
+  - Fixed position with blur backdrop effect
+  - Brand name on left, nav links on right
+  - Scroll effect with shadow
+  - Mobile-responsive
+- **Section Reorder**: Moved Articles section right after Hero for better visibility
+- **Contrast Fixes**: Improved text visibility in "Read Original Article" boxes on article pages
+
+---
+
+### **Previously Implemented (January 14, 2026)**
 
 **✅ Must-Read Articles for AI PMs**
 - Homepage section with article cards
 - Dedicated articles listing page
-- First article: "Understanding AI Agent Evals" (Anthropic)
+- 3 published articles:
+  1. "Why Every AI PM Should Use Claude Code" (Lenny's Newsletter)
+  2. "Understanding AI Agent Evals" (Anthropic)
+  3. "How to Find Your First 1,000 Users" (Lenny's Newsletter)
 - Conversational mentor tone for PM audience
 - Scalable structure for adding more articles
 
@@ -640,7 +675,7 @@ git checkout main
 
 **Project Started**: January 11, 2026
 **Launch Date**: January 11, 2026
-**Last Major Update**: January 12, 2026
+**Last Major Update**: January 14, 2026
 
 **Original Requirements**:
 - Simple but eye-catching page
@@ -655,8 +690,8 @@ git checkout main
 - Google Forms over embedded form (easier to manage)
 - Logo.dev over Clearbit (better API, free tier)
 - Vercel over other hosts (simplicity, auto-deploy, free)
-- Syne font for distinctive look
-- Black/white/cyan color scheme (minimal, professional)
+- Poppins font for professional, universally appealing headings
+- Black/white/navy blue color scheme (minimal, professional)
 
 **What Makes This Project Special**:
 - Personal brand for AI Product Management mentorship
