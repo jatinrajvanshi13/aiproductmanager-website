@@ -72,7 +72,8 @@
 │   ├── claude-code-for-pms.html   # Article: Claude Code for PMs
 │   ├── evals-for-ai-agents.html   # Article: AI Agent Evals
 │   ├── finding-first-users.html   # Article: How to Find Your First 1,000 Users
-│   └── tldr-newsletter-for-pms.html # Article: TLDR AI Newsletter Recommendation
+│   ├── tldr-newsletter-for-pms.html # Article: TLDR AI Newsletter Recommendation
+│   └── pm-communities-bc.html     # Article: PM Communities in BC (Product BC + ProductCamp)
 ├── sitemap.xml                     # SEO sitemap for search engines
 ├── robots.txt                      # Search engine crawl instructions
 ├── site.webmanifest               # PWA manifest file
@@ -110,7 +111,7 @@
 
 ### **2. Must-Read Articles for AI PMs**
 - Located right after Hero section (prominent placement)
-- 4-card grid: 4 published articles (Claude Code + AI Evals + First 1,000 Users + TLDR Newsletter)
+- 5-card grid: 5 published articles (Claude Code + AI Evals + First 1,000 Users + TLDR Newsletter + PM Communities BC)
 - Tagline: "Complex AI concepts explained like we're grabbing coffee"
 - CTA: "View All Articles" → `/articles.html`
 
@@ -220,6 +221,14 @@ Showcases expertise in:
    - ~1,500 words, 5 min read
    - Tags: Resources, AI Learning, Newsletters
    - Note: Genuine personal recommendation - no referral link or affiliate
+
+5. **"The Two PM Communities Every PM in BC Should Join"**
+   - Original: Personal recommendation (no affiliation)
+   - URLs: https://productbc.ca/ and https://productcampvancouver.org/
+   - Topics: Product BC (4,000+ Slack community), ProductCamp Vancouver (annual unconference), networking mindset, building connections vs job hunting
+   - ~2,000 words, 7 min read
+   - Tags: Community, Networking, Vancouver
+   - Note: 4 years of attending events - genuine personal recommendation
 
 **Design:**
 - Matches existing black/white/navy blue palette
@@ -483,11 +492,12 @@ git push origin main
 **✅ Must-Read Articles for AI PMs**
 - Homepage section with article cards
 - Dedicated articles listing page
-- 4 published articles:
+- 5 published articles:
   1. "Why Every AI PM Should Use Claude Code" (Lenny's Newsletter)
   2. "Understanding AI Agent Evals" (Anthropic)
   3. "How to Find Your First 1,000 Users" (Lenny's Newsletter)
   4. "The One AI Newsletter Every PM Should Read Daily" (Personal Recommendation - TLDR AI)
+  5. "The Two PM Communities Every PM in BC Should Join" (Personal Recommendation - Product BC + ProductCamp)
 - Conversational mentor tone for PM audience
 - Scalable structure for adding more articles
 
