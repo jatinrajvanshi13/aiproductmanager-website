@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <title>The One AI Newsletter Every PM Should Read Daily | Jatin Rajvanshi</title>
+    <meta name="title" content="The One AI Newsletter Every PM Should Read Daily - TLDR AI">
+    <meta name="description" content="After 3 years of reading TLDR AI daily, here's why I think every AI Product Manager should subscribe. No referral, no affiliate—just a genuine recommendation that changed how I stay current with AI.">
+    <meta name="keywords" content="TLDR Newsletter, AI Newsletter, AI Product Management, Stay Current AI, AI News for PMs, Tech Newsletter, AI Learning, Product Manager Resources">
+    <meta name="author" content="Jatin Rajvanshi">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://aiproductmanager.ca/articles/tldr-newsletter-for-pms.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://aiproductmanager.ca/articles/tldr-newsletter-for-pms.html">
+    <meta property="og:title" content="The One AI Newsletter Every PM Should Read Daily">
+    <meta property="og:description" content="After 3 years of reading TLDR AI, here's why every AI PM should subscribe. No referral—just genuine advice.">
+    <meta property="og:image" content="https://aiproductmanager.ca/og-image.jpg">
+    <meta property="article:published_time" content="2026-01-16T00:00:00-08:00">
+    <meta property="article:author" content="Jatin Rajvanshi">
+    <meta property="article:tag" content="Resources">
+    <meta property="article:tag" content="AI Learning">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="The One AI Newsletter Every PM Should Read Daily">
+    <meta name="twitter:description" content="3 years of TLDR AI. Here's why every AI PM needs this in their inbox.">
+    <meta name="twitter:image" content="https://aiproductmanager.ca/og-image.jpg">
+
+    <!-- Additional SEO -->
+    <meta name="theme-color" content="#2563EB">
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <script defer src="/_vercel/insights/script.js"></script>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "The One AI Newsletter Every PM Should Read Daily",
+      "description": "After 3 years of reading TLDR AI daily, here's why I think every AI Product Manager should subscribe",
+      "image": "https://aiproductmanager.ca/og-image.jpg",
+      "datePublished": "2026-01-16",
+      "dateModified": "2026-01-16",
+      "author": {
+        "@type": "Person",
+        "name": "Jatin Rajvanshi",
+        "url": "https://aiproductmanager.ca"
+      },
+      "publisher": {
+        "@type": "Person",
+        "name": "Jatin Rajvanshi"
+      },
+      "about": ["TLDR Newsletter", "AI Learning", "Product Management", "AI News"],
+      "keywords": "TLDR AI, AI Newsletter, AI PM Resources, Tech News"
+    }
+    </script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-weight: 300;
+            line-height: 1.7;
+            color: #1a1a1a;
+            background: #ffffff;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Poppins', sans-serif;
+            letter-spacing: -0.03em;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .article-container {
+            max-width: 800px;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 16px 0;
+            border-bottom: 1px solid #e5e5e5;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar-brand {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: #1a1a1a;
+            text-decoration: none;
+        }
+
+        .navbar-nav {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .navbar-nav a {
+            color: #555;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 400;
+            transition: color 0.2s ease;
+        }
+
+        .navbar-nav a:hover {
+            color: #1a1a1a;
+        }
+
+        .navbar-nav .nav-cta {
+            background: #1a1a1a;
+            color: #fff !important;
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-weight: 500;
+        }
+
+        .navbar-nav .nav-cta:hover {
+            background: #2563EB;
+        }
+
+        @media (max-width: 768px) {
+            .navbar-nav {
+                gap: 16px;
+            }
+            .navbar-nav a:not(.nav-cta) {
+                display: none;
+            }
+        }
+
+        /* Article Header */
+        .article-header {
+            background: #fafafa;
+            padding: 120px 0 60px;
+        }
+
+        .article-breadcrumb {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 32px;
+        }
+
+        .article-breadcrumb a {
+            color: #2563EB;
+            text-decoration: none;
+        }
+
+        .article-header h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.15;
+        }
+
+        .article-subtitle {
+            font-size: 1.3rem;
+            color: #666;
+            margin-bottom: 40px;
+            line-height: 1.6;
+            font-weight: 300;
+        }
+
+        .article-meta-bar {
+            background: #fff;
+            border: 2px solid #e5e5e5;
+            border-radius: 12px;
+            padding: 24px;
+            margin-top: 32px;
+        }
+
+        .personal-note-box {
+            margin-bottom: 16px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        .meta-label {
+            font-size: 0.85rem;
+            color: #999;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .disclaimer {
+            background: #F0F7FF;
+            border-left: 4px solid #2563EB;
+            padding: 16px;
+            border-radius: 0 8px 8px 0;
+            font-size: 0.95rem;
+            color: #555;
+        }
+
+        .reading-info {
+            display: flex;
+            justify-content: space-between;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Article Content */
+        .article-content {
+            padding: 80px 0;
+        }
+
+        .article-section {
+            margin-bottom: 64px;
+        }
+
+        .section-badge {
+            display: inline-block;
+            background: rgba(37, 99, 235, 0.1);
+            color: #2563EB;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .article-section h2 {
+            font-size: 2rem;
+            margin-bottom: 24px;
+            font-weight: 700;
+        }
+
+        .article-section p {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .article-section ul, .article-section ol {
+            margin: 20px 0;
+            padding-left: 24px;
+        }
+
+        .article-section li {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 12px;
+            color: #333;
+        }
+
+        .callout-box {
+            background: #F0F7FF;
+            border-left: 4px solid #2563EB;
+            padding: 24px;
+            margin: 32px 0;
+            border-radius: 0 12px 12px 0;
+        }
+
+        .callout-box strong {
+            display: block;
+            margin-bottom: 12px;
+            font-size: 1.1rem;
+        }
+
+        .callout-box ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        .callout-box li {
+            font-size: 1rem;
+            margin-bottom: 8px;
+        }
+
+        /* Benefit Cards */
+        .benefit-card {
+            background: #fff;
+            border: 2px solid #e5e5e5;
+            border-radius: 16px;
+            padding: 32px;
+            margin-bottom: 24px;
+            transition: all 0.3s ease;
+        }
+
+        .benefit-card:hover {
+            border-color: #2563EB;
+            box-shadow: 0 10px 40px rgba(37, 99, 235, 0.1);
+        }
+
+        .benefit-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 16px;
+            font-weight: 600;
+        }
+
+        .benefit-card p {
+            margin-bottom: 16px;
+        }
+
+        /* CTA Box */
+        .cta-box {
+            background: #1a1a1a;
+            color: #fff;
+            padding: 48px;
+            border-radius: 16px;
+            text-align: center;
+            margin: 48px 0;
+        }
+
+        .cta-box h3 {
+            color: #fff;
+            font-size: 1.8rem;
+            margin-bottom: 16px;
+        }
+
+        .cta-box p {
+            color: #ccc;
+            margin-bottom: 24px;
+        }
+
+        .cta-box .cta-button {
+            display: inline-block;
+            padding: 18px 48px;
+            background: #2563EB;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: 2px solid #2563EB;
+        }
+
+        .cta-box .cta-button:hover {
+            background: #fff;
+            color: #000;
+            border-color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 40px rgba(255, 255, 255, 0.3);
+        }
+
+        .cta-box .disclaimer-small {
+            font-size: 0.9rem;
+            color: #999;
+            margin-top: 20px;
+        }
+
+        /* Personal Story */
+        .story-box {
+            background: #fafafa;
+            border-radius: 16px;
+            padding: 32px;
+            margin: 32px 0;
+        }
+
+        .story-box h3 {
+            margin-bottom: 16px;
+        }
+
+        /* Action Items */
+        .action-box {
+            background: #fff;
+            border: 2px solid #e5e5e5;
+            border-radius: 16px;
+            padding: 32px;
+            margin-bottom: 24px;
+        }
+
+        .action-box h3 {
+            font-size: 1.2rem;
+            margin-bottom: 16px;
+            color: #2563EB;
+        }
+
+        .action-box ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        /* Article Footer Section */
+        .article-footer-section {
+            background: #fafafa;
+            padding: 80px 0;
+        }
+
+        .article-footer-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .footer-left h3, .footer-right h3 {
+            font-size: 1.5rem;
+            margin-bottom: 16px;
+        }
+
+        .footer-left p, .footer-right p {
+            color: #666;
+            margin-bottom: 24px;
+            line-height: 1.7;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 14px 32px;
+            background: #000;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: #2563EB;
+            transform: translateY(-2px);
+        }
+
+        .cta-button-secondary {
+            display: inline-block;
+            padding: 14px 32px;
+            background: #fff;
+            color: #000;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 500;
+            border: 2px solid #000;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button-secondary:hover {
+            background: #000;
+            color: #fff;
+        }
+
+        /* Footer */
+        footer {
+            background: #000;
+            color: #fff;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+            color: #888;
+        }
+
+        footer a {
+            color: #2563EB;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .article-footer-content {
+                grid-template-columns: 1fr;
+            }
+
+            .reading-info {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .cta-box {
+                padding: 32px 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="/" class="navbar-brand">Jatin Rajvanshi</a>
+            <ul class="navbar-nav">
+                <li><a href="/articles.html">← All Articles</a></li>
+                <li><a href="/">Home</a></li>
+                <li><a href="/#contact" class="nav-cta">Get in Touch</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Article Header -->
+    <header class="article-header">
+        <div class="container article-container">
+            <div class="article-breadcrumb">
+                <a href="/">Home</a> / <a href="/articles.html">Articles</a> / The One AI Newsletter Every PM Should Read
+            </div>
+
+            <h1>The One AI Newsletter Every PM Should Read Daily</h1>
+            <p class="article-subtitle">
+                I've been reading TLDR AI every single day for 2-3 years. It's genuinely changed how I stay current with AI. Here's why I think you should subscribe too.
+            </p>
+
+            <div class="article-meta-bar">
+                <div class="personal-note-box">
+                    <span class="meta-label">Personal Recommendation</span>
+                    <div class="disclaimer">
+                        <strong>Full transparency:</strong> I have no referral code, no affiliate deal, no partnership with TLDR. I don't get anything if you sign up. This is purely a genuine recommendation based on 2-3 years of daily reading. This is what has worked for me.
+                    </div>
+                </div>
+                <div class="reading-info">
+                    <span>☕ 5 min read</span>
+                    <span>Published: January 16, 2026</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Article Content -->
+    <article class="article-content">
+        <div class="container article-container">
+
+            <!-- Section 1: Why This Matters -->
+            <section class="article-section why-matters">
+                <div class="section-badge">Why This Matters to You</div>
+                <h2>The Problem: Staying Current in AI is Exhausting</h2>
+
+                <p>
+                    Let's be honest—keeping up with AI is overwhelming. Every week there's a new model, a new startup, a new breakthrough. Twitter is noise. LinkedIn is mostly people humble-bragging. Research papers are dense. And most "AI news" sites bury the signal in clickbait.
+                </p>
+
+                <p>
+                    As an AI Product Manager, you're expected to know what's happening. Your leadership asks about the latest announcements. Your engineers want to try new tools. Your competitors are shipping AI features. You need to stay informed, but you don't have 2 hours a day to scroll through AI Twitter.
+                </p>
+
+                <p>
+                    That's exactly where I was 2-3 years ago. I tried everything—following AI researchers on Twitter, subscribing to multiple newsletters, setting up RSS feeds, joining Discord servers. Most of it was either too technical, too shallow, or just took too much time.
+                </p>
+
+                <p>
+                    Then I found TLDR AI. And I haven't missed a day since.
+                </p>
+
+                <div class="callout-box">
+                    <strong>The TL;DR:</strong>
+                    <ul>
+                        <li>TLDR AI is a free daily newsletter that curates the most important AI news</li>
+                        <li>Takes 5 minutes to read (I usually read it with my morning coffee)</li>
+                        <li>Covers research, products, tools, and industry news</li>
+                        <li>Written for tech-savvy readers, but not overly academic</li>
+                        <li>No paywall, no spam, just consistently good curation</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- CTA Box - Early placement -->
+            <div class="cta-box">
+                <h3>Sign Up for TLDR AI</h3>
+                <p>One email. Every morning. The AI news that actually matters.</p>
+                <a href="https://tldr.tech/ai" target="_blank" class="cta-button">
+                    Subscribe Free at tldr.tech/ai →
+                </a>
+                <p class="disclaimer-small">No referral. No affiliate. Just a genuine recommendation.</p>
+            </div>
+
+            <!-- Section 2: What Makes It Good -->
+            <section class="article-section key-takeaways">
+                <div class="section-badge">What Makes It Great</div>
+                <h2>Why TLDR AI Works (For Me)</h2>
+
+                <div class="benefit-card">
+                    <h3>1. Perfect Length and Format</h3>
+                    <p>
+                        Each newsletter is exactly the right length. Not so short that it's useless, not so long that it becomes a chore. I can read the whole thing in 5 minutes while drinking my morning coffee. The format is consistent: headlines, 2-3 sentence summaries, and links if you want to go deeper.
+                    </p>
+                    <p>
+                        <strong>Why this matters for PMs:</strong> You get just enough context to know what's happening and decide if you need to dig deeper. Most days, the summary is enough. Some days, you'll click through to read the full story.
+                    </p>
+                </div>
+
+                <div class="benefit-card">
+                    <h3>2. Actually Good Curation</h3>
+                    <p>
+                        The TLDR team clearly understands what matters. They're not just aggregating every AI headline—they're picking the stories that are actually significant. New model releases. Important research papers. Product launches that matter. Company news that affects the industry.
+                    </p>
+                    <p>
+                        <strong>Why this matters for PMs:</strong> Someone else is doing the filtering for you. You're not wading through hype to find the signal. If it's in TLDR AI, it's probably worth knowing about.
+                    </p>
+                </div>
+
+                <div class="benefit-card">
+                    <h3>3. Right Level of Technical Depth</h3>
+                    <p>
+                        This is the hardest thing to get right, and TLDR nails it. The summaries are technical enough to be useful—you'll understand what the research actually found or what the product actually does—but not so technical that you need a PhD to follow along.
+                    </p>
+                    <p>
+                        <strong>Why this matters for PMs:</strong> You can have informed conversations with your engineers about new developments. You understand the implications without getting lost in implementation details.
+                    </p>
+                </div>
+
+                <div class="benefit-card">
+                    <h3>4. Consistency and Reliability</h3>
+                    <p>
+                        TLDR AI shows up in my inbox every single morning. No skipped days. No "we're taking a break this week." For 2-3 years, it's been the most reliable source of AI news I've found. That consistency compounds—over time, you build a mental model of what's happening in AI just by reading it daily.
+                    </p>
+                    <p>
+                        <strong>Why this matters for PMs:</strong> AI knowledge isn't about one article—it's about continuous learning. A daily habit of 5 minutes adds up to hours of learning every month, without ever feeling overwhelming.
+                    </p>
+                </div>
+
+                <div class="benefit-card">
+                    <h3>5. It's Free</h3>
+                    <p>
+                        No paywall. No premium tier you need to subscribe to. Just free, high-quality AI news every day. Yes, they have sponsors, but the sponsorship content is clearly labeled and never intrusive.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Personal Story Section -->
+            <section class="article-section">
+                <div class="section-badge">My Experience</div>
+                <h2>How I Actually Use It</h2>
+
+                <div class="story-box">
+                    <h3>My Daily Routine</h3>
+                    <p>
+                        Every morning, I wake up, make coffee, and read TLDR AI. That's it. Takes about 5 minutes. I don't take notes. I don't click every link. I just read through the headlines and summaries.
+                    </p>
+                    <p>
+                        Some days, nothing is directly relevant to my work—but I'm still building context. Other days, there's a story that's directly relevant to a product decision I'm making. "Oh, OpenAI just updated their API pricing" or "Anthropic released a new safety paper" or "This startup just raised $50M for a tool that competes with what we're building."
+                    </p>
+                    <p>
+                        The key is that I don't have to think about staying current with AI. It just happens. One email, every day, and I know what's going on.
+                    </p>
+                </div>
+
+                <p>
+                    Here are some real examples of how TLDR AI has helped me:
+                </p>
+
+                <ul>
+                    <li><strong>Spotted a competitor early:</strong> Saw a product launch in TLDR AI months before it became mainstream news. Gave us time to think about our response.</li>
+                    <li><strong>Found tools for our team:</strong> Discovered several AI tools that we now use in our workflow, just from seeing them mentioned in the newsletter.</li>
+                    <li><strong>Prepared for leadership questions:</strong> When my CEO asked about a new AI announcement, I already knew about it from that morning's email. Small thing, but it builds credibility.</li>
+                    <li><strong>Understood research implications:</strong> TLDR AI covered a research paper that directly affected our product direction. The summary was enough to understand why it mattered.</li>
+                </ul>
+            </section>
+
+            <!-- Action Section -->
+            <section class="article-section">
+                <div class="section-badge">What You Can Do</div>
+                <h2>How to Get Started</h2>
+
+                <div class="action-box">
+                    <h3>Step 1: Subscribe (30 seconds)</h3>
+                    <ul>
+                        <li>Go to <a href="https://tldr.tech/ai" target="_blank" style="color: #2563EB;">tldr.tech/ai</a></li>
+                        <li>Enter your email</li>
+                        <li>That's it. You'll get your first email the next morning.</li>
+                    </ul>
+                </div>
+
+                <div class="action-box">
+                    <h3>Step 2: Build the Habit</h3>
+                    <ul>
+                        <li>Read it with your morning coffee or during your commute</li>
+                        <li>Don't pressure yourself to click every link—just read the summaries</li>
+                        <li>If something catches your eye, bookmark it for later</li>
+                        <li>Give it 2 weeks before deciding if it's for you</li>
+                    </ul>
+                </div>
+
+                <div class="action-box">
+                    <h3>Step 3: Go Deeper When Needed</h3>
+                    <ul>
+                        <li>When a topic is directly relevant to your work, click through to the full article</li>
+                        <li>Use TLDR AI as a starting point for deeper research, not the end point</li>
+                        <li>Share relevant stories with your team—it's a good way to start AI conversations</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Final CTA -->
+            <div class="cta-box">
+                <h3>Ready to Stay Current with AI?</h3>
+                <p>5 minutes a day. Every morning. The AI news that matters.</p>
+                <a href="https://tldr.tech/ai" target="_blank" class="cta-button">
+                    Subscribe Free at tldr.tech/ai →
+                </a>
+                <p class="disclaimer-small">
+                    Genuinely no referral, no affiliate, no partnership. I just think this newsletter is valuable and wanted to share it with other AI PMs.
+                </p>
+            </div>
+
+        </div>
+    </article>
+
+    <!-- Article Footer -->
+    <section class="article-footer-section">
+        <div class="container">
+            <div class="article-footer-content">
+                <div class="footer-left">
+                    <h3>Want More PM Resources?</h3>
+                    <p>I share practical advice for AI Product Managers—tools, frameworks, and lessons from building AI products at TELUS, Boeing, and startups.</p>
+                    <a href="/#contact" class="cta-button">Let's Connect</a>
+                </div>
+                <div class="footer-right">
+                    <h3>More Articles</h3>
+                    <p>Check out my other articles breaking down AI concepts for Product Managers.</p>
+                    <a href="/articles.html" class="cta-button-secondary">View All Articles</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>
+                © 2026 Jatin Rajvanshi | Vancouver, Canada<br>
+                <a href="mailto:jatinrajvanshi13@gmail.com">jatinrajvanshi13@gmail.com</a> |
+                <a href="https://www.linkedin.com/in/jatin-rajvanshi/" target="_blank">LinkedIn</a>
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>

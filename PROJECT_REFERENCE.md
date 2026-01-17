@@ -2,7 +2,7 @@
 
 **Project Owner**: Jatin Rajvanshi
 **Domain**: https://aiproductmanager.ca
-**Last Updated**: January 16, 2026
+**Last Updated**: January 17, 2026
 **Purpose**: Personal landing page for free AI Product Management mentorship
 
 ---
@@ -71,7 +71,8 @@
 ├── articles/                       # Articles directory (NEW)
 │   ├── claude-code-for-pms.html   # Article: Claude Code for PMs
 │   ├── evals-for-ai-agents.html   # Article: AI Agent Evals
-│   └── finding-first-users.html   # Article: How to Find Your First 1,000 Users
+│   ├── finding-first-users.html   # Article: How to Find Your First 1,000 Users
+│   └── tldr-newsletter-for-pms.html # Article: TLDR AI Newsletter Recommendation
 ├── sitemap.xml                     # SEO sitemap for search engines
 ├── robots.txt                      # Search engine crawl instructions
 ├── site.webmanifest               # PWA manifest file
@@ -109,7 +110,7 @@
 
 ### **2. Must-Read Articles for AI PMs**
 - Located right after Hero section (prominent placement)
-- 3-card grid: 3 published articles (Claude Code + AI Evals + First 1,000 Users)
+- 4-card grid: 4 published articles (Claude Code + AI Evals + First 1,000 Users + TLDR Newsletter)
 - Tagline: "Complex AI concepts explained like we're grabbing coffee"
 - CTA: "View All Articles" → `/articles.html`
 
@@ -211,6 +212,14 @@ Showcases expertise in:
    - Topics: 7 user acquisition strategies, supply vs demand side, case studies from Tinder, Uber, Netflix, DoorDash
    - ~2,800 words, 10 min read
    - Tags: Growth, User Acquisition, Go-to-Market
+
+4. **"The One AI Newsletter Every PM Should Read Daily"**
+   - Original: Personal recommendation (no referral/affiliate)
+   - URL: https://tldr.tech/ai
+   - Topics: TLDR AI newsletter, staying current with AI developments, daily reading habit, curated AI news
+   - ~1,500 words, 5 min read
+   - Tags: Resources, AI Learning, Newsletters
+   - Note: Genuine personal recommendation - no referral link or affiliate
 
 **Design:**
 - Matches existing black/white/navy blue palette
@@ -474,10 +483,11 @@ git push origin main
 **✅ Must-Read Articles for AI PMs**
 - Homepage section with article cards
 - Dedicated articles listing page
-- 3 published articles:
+- 4 published articles:
   1. "Why Every AI PM Should Use Claude Code" (Lenny's Newsletter)
   2. "Understanding AI Agent Evals" (Anthropic)
   3. "How to Find Your First 1,000 Users" (Lenny's Newsletter)
+  4. "The One AI Newsletter Every PM Should Read Daily" (Personal Recommendation - TLDR AI)
 - Conversational mentor tone for PM audience
 - Scalable structure for adding more articles
 
