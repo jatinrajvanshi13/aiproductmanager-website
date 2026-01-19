@@ -229,7 +229,7 @@
         }
 
         .navbar-nav .nav-cta {
-            background: #1a1a1a;
+            background: #2563EB;
             color: #fff !important;
             padding: 10px 24px;
             border-radius: 50px;
@@ -237,7 +237,7 @@
         }
 
         .navbar-nav .nav-cta:hover {
-            background: #2563EB;
+            background: #1e3a5f;
         }
 
         /* Mobile menu */
@@ -345,23 +345,238 @@
         .cta-button {
             display: inline-block;
             padding: 18px 48px;
-            background: #000;
+            background: #2563EB;
             color: #fff;
             text-decoration: none;
             border-radius: 50px;
             font-weight: 500;
             font-size: 1.1rem;
             transition: all 0.3s ease;
-            border: 2px solid #000;
+            border: 2px solid #2563EB;
             cursor: pointer;
             letter-spacing: 0.03em;
         }
 
         .cta-button:hover {
-            background: #fff;
-            color: #000;
+            background: #1e3a5f;
+            border-color: #1e3a5f;
+            color: #fff;
             transform: translateY(-2px);
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 10px 40px rgba(37, 99, 235, 0.3);
+        }
+
+        /* Stats Banner */
+        .stats-banner {
+            background: linear-gradient(135deg, #1e3a5f 0%, #2563EB 100%);
+            padding: 32px 0;
+        }
+
+        .stats-grid {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 48px;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            text-align: center;
+            color: #fff;
+        }
+
+        .stat-number {
+            font-family: 'Poppins', sans-serif;
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            font-weight: 700;
+            color: #fff;
+            display: block;
+            letter-spacing: -0.02em;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 400;
+            letter-spacing: 0.02em;
+            margin-top: 4px;
+        }
+
+        @media (max-width: 768px) {
+            .stats-grid {
+                gap: 32px;
+            }
+
+            .stat-item {
+                flex: 0 0 40%;
+            }
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            padding: 80px 0;
+            background: #fff;
+            overflow: hidden;
+        }
+
+        .testimonials-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .testimonials-header h2 {
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .testimonials-header p {
+            font-size: 1.1rem;
+            color: #666;
+            font-weight: 300;
+        }
+
+        .testimonials-header .rating-summary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 16px;
+            background: #fafafa;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.95rem;
+            color: #333;
+        }
+
+        .testimonials-header .stars {
+            color: #FFB800;
+            letter-spacing: 2px;
+        }
+
+        .marquee-container {
+            position: relative;
+            width: 100%;
+        }
+
+        .marquee-container::before,
+        .marquee-container::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 100px;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .marquee-container::before {
+            left: 0;
+            background: linear-gradient(to right, #fff, transparent);
+        }
+
+        .marquee-container::after {
+            right: 0;
+            background: linear-gradient(to left, #fff, transparent);
+        }
+
+        .marquee-track {
+            display: flex;
+            gap: 24px;
+            animation: marquee 60s linear infinite;
+            width: max-content;
+        }
+
+        .marquee-track:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes marquee {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .testimonial-card {
+            flex-shrink: 0;
+            width: 350px;
+            background: #fafafa;
+            border: 1px solid #e5e5e5;
+            border-radius: 16px;
+            padding: 28px;
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            border-color: #2563EB;
+            box-shadow: 0 10px 40px rgba(37, 99, 235, 0.1);
+        }
+
+        .testimonial-stars {
+            color: #FFB800;
+            font-size: 1rem;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+        }
+
+        .testimonial-quote {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: #333;
+            margin-bottom: 20px;
+            font-weight: 400;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .testimonial-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #2563EB;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .testimonial-info {
+            text-align: left;
+        }
+
+        .testimonial-name {
+            font-weight: 600;
+            color: #1a1a1a;
+            font-size: 0.95rem;
+        }
+
+        .testimonial-date {
+            font-size: 0.8rem;
+            color: #999;
+            font-weight: 300;
+        }
+
+        @media (max-width: 768px) {
+            .testimonials {
+                padding: 60px 0;
+            }
+
+            .testimonial-card {
+                width: 300px;
+                padding: 24px;
+            }
+
+            .marquee-container::before,
+            .marquee-container::after {
+                width: 40px;
+            }
         }
 
         /* About Section */
@@ -374,6 +589,16 @@
             max-width: 900px;
             margin: 0 auto;
             text-align: center;
+        }
+
+        .profile-photo {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 32px;
+            border: 4px solid #fff;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
         }
 
         .about h2 {
@@ -501,7 +726,7 @@
         /* Expertise Section */
         .expertise {
             padding: 80px 0;
-            background: #000;
+            background: linear-gradient(135deg, #1e3a5f 0%, #2563EB 100%);
             color: #fff;
         }
 
@@ -514,7 +739,7 @@
         .expertise h3 {
             font-size: 1.8rem;
             margin-bottom: 32px;
-            color: #2563EB;
+            color: #fff;
             font-weight: 600;
         }
 
@@ -526,12 +751,12 @@
         }
 
         .expertise-item {
-            background: #1a1a1a;
+            background: rgba(255, 255, 255, 0.1);
             padding: 24px 20px;
             border-radius: 8px;
-            border: 1px solid #333;
+            border: 1px solid rgba(255, 255, 255, 0.2);
             font-size: 0.95rem;
-            color: #ccc;
+            color: rgba(255, 255, 255, 0.9);
             font-weight: 400;
         }
 
@@ -689,28 +914,28 @@
             display: inline-block;
             padding: 18px 48px;
             background: #fff;
-            color: #000;
+            color: #2563EB;
             text-decoration: none;
             border-radius: 50px;
             font-weight: 500;
             font-size: 1.1rem;
             transition: all 0.3s ease;
-            border: 2px solid #000;
+            border: 2px solid #2563EB;
             cursor: pointer;
             letter-spacing: 0.03em;
         }
 
         .cta-button-secondary:hover {
-            background: #000;
+            background: #2563EB;
             color: #fff;
             transform: translateY(-2px);
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 10px 40px rgba(37, 99, 235, 0.2);
         }
 
         /* Contact Section */
         .contact {
             padding: 120px 0;
-            background: #000;
+            background: linear-gradient(135deg, #1e3a5f 0%, #2563EB 100%);
             color: #fff;
         }
 
@@ -724,7 +949,7 @@
         .contact p.subtitle {
             text-align: center;
             font-size: 1.2rem;
-            color: #aaa;
+            color: rgba(255, 255, 255, 0.8);
             margin-bottom: 64px;
             font-weight: 300;
             letter-spacing: 0.02em;
@@ -742,7 +967,7 @@
         .large-text {
             font-size: clamp(1.5rem, 3vw, 2.2rem);
             font-weight: 600;
-            color: #2563EB;
+            color: #fff;
             margin-bottom: 24px;
             line-height: 1.5;
             font-family: 'Poppins', sans-serif;
@@ -751,15 +976,15 @@
 
         .medium-text {
             font-size: 1.2rem;
-            color: #ccc;
+            color: rgba(255, 255, 255, 0.85);
             margin-bottom: 40px;
             line-height: 1.7;
             font-weight: 300;
         }
 
         .promise-box {
-            background: #1a1a1a;
-            border: 2px solid #333;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.2);
             border-radius: 12px;
             padding: 32px;
             margin: 40px 0;
@@ -781,7 +1006,7 @@
 
         .small-text {
             font-size: 1rem;
-            color: #999;
+            color: rgba(255, 255, 255, 0.7);
             margin-bottom: 32px;
             font-weight: 300;
             letter-spacing: 0.01em;
@@ -790,11 +1015,11 @@
         .submit-button {
             display: inline-block;
             padding: 20px 56px;
-            background: #2563EB;
-            color: #000;
+            background: #fff;
+            color: #1e3a5f;
             border: none;
             border-radius: 50px;
-            font-weight: 500;
+            font-weight: 600;
             font-size: 1.2rem;
             cursor: pointer;
             transition: all 0.3s ease;
@@ -804,18 +1029,19 @@
         }
 
         .submit-button:hover {
-            background: #fff;
+            background: #1e3a5f;
+            color: #fff;
             transform: translateY(-2px);
-            box-shadow: 0 10px 40px rgba(0, 217, 255, 0.3);
+            box-shadow: 0 10px 40px rgba(255, 255, 255, 0.2);
         }
 
         /* Footer */
         footer {
             padding: 40px 0;
             text-align: center;
-            background: #000;
-            color: #666;
-            border-top: 1px solid #222;
+            background: #1e3a5f;
+            color: rgba(255, 255, 255, 0.7);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         /* Responsive */
@@ -889,6 +1115,314 @@
                 <h1>Start Your Journey in <span class="highlight">AI Product Management</span></h1>
                 <p class="tagline">From hating code to leading AI products at Fortune 500 companies. I bridge the tech and non-tech worlds - and I can help you do the same. Completely free mentorship in Vancouver, Canada.</p>
                 <a href="#contact" class="cta-button">Let's Connect</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Banner -->
+    <section class="stats-banner">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-number">10+</span>
+                    <span class="stat-label">Years Experience</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">7</span>
+                    <span class="stat-label">Companies</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">1M+</span>
+                    <span class="stat-label">Users Impacted</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">50+</span>
+                    <span class="stat-label">Mentorship Sessions</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="testimonials-header">
+                <h2>What Real People Say</h2>
+                <p>Verified reviews from <a href="https://topmate.io/jatinrajvanshi" target="_blank" style="color: #2563EB; text-decoration: none; font-weight: 500;">Topmate.io</a></p>
+                <div class="rating-summary">
+                    <span class="stars">★★★★★</span>
+                    <span>5/5 from 50+ sessions</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="marquee-container">
+            <div class="marquee-track">
+                <!-- First set of testimonials -->
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-quote">"Jatin was very helpful and provided real world examples of the mindset of an AI Product Manager. Additionally, he shared resources to guide my learning and set me up for success."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">T</div>
+                        <div class="testimonial-info">
+                            <div class="testimonial-name">Temi</div>
+                            <div class="testimonial-date">Jun 2025</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-quote">"I had the privilege of being mentored by Jatin and his guidance was invaluable. His insights on leveraging my experience gave me a fresh perspective on positioning myself in the PM space. His resume feedback was also incredibly helpful."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">A</div>
+                        <div class="testimonial-info">
+                            <div class="testimonial-name">Akhilesh Vasisht</div>
+                            <div class="testimonial-date">Mar 2025</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-quote">"Super insightful and gave very genuine and actionable advice!"</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">A</div>
+                        <div class="testimonial-info">
+                            <div class="testimonial-name">Adam Shivji</div>
+                            <div class="testimonial-date">Mar 2025</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-quote">"A humble and insightful visionary who shares his insights eloquently and clearly."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">Y</div>
+                        <div class="testimonial-info">
+                            <div class="testimonial-name">Yousef Jafarnia Dabanloo</div>
+                            <div class="testimonial-date">Mar 2025</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-quote">"Jatin was incredibly insightful, sharing his background and experiences while offering valuable tips for career exploration through his own early career journey. He was easy to talk to and an exceptional mentor."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">T</div>
+                        <div class="testimonial-info">
+                            <div class="testimonial-name">Tabreek Somani</div>
+                            <div class="testimonial-date">Sep 2024</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-quote">"It's a great session with Jatin and I felt half an hour won't be enough with him, he clearly articulated his experiences and the way it shaped him as a person!! It was an amazing session!!"</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">P</div>
+                        <div class="testimonial-info">
+                            <div class="testimonial-name">Prabhu P</div>
+                            <div class="testimonial-date">Aug 2024</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-quote">"He was genuinely helpful and gave me some really great advice even though we connected over a short call. I wish to connect with him again."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">N</div>
+                        <div class="testimonial-info">
+                            <div class="testimonial-name">Niladri Mondal</div>
+                            <div class="testimonial-date">Jul 2025</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-quote">"Jatin shared great information, induced encouragement, and allowed me to think more holistically about certain topics. The flexibility offered on timing from his side is appreciated. I would recommend chatting with Jatin to others."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">K</div>
+                        <div class="testimonial-info">
+                            <div class="testimonial-name">Karan Saggu</div>
+                            <div class="testimonial-date">Apr 2025</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-quote">"Thank you so much for the very specific advice, which I wasn't aware of before. I truly appreciate it!"</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">R</div>
+                        <div class="testimonial-info">
+                            <div class="testimonial-name">Roy</div>
+                            <div class="testimonial-date">Oct 2024</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-quote">"Helpful and friendly person who also gives valuable advice."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">A</div>
+                        <div class="testimonial-info">
+                            <div class="testimonial-name">Anonymous</div>
+                            <div class="testimonial-date">Sep 2024</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-quote">"Jatin gave me some solid advice and was really friendly."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">A</div>
+                        <div class="testimonial-info">
+                            <div class="testimonial-name">Anonymous</div>
+                            <div class="testimonial-date">Jun 2025</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Duplicate set for seamless loop -->
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-quote">"Jatin was very helpful and provided real world examples of the mindset of an AI Product Manager. Additionally, he shared resources to guide my learning and set me up for success."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">T</div>
+                        <div class="testimonial-info">
+                            <div class="testimonial-name">Temi</div>
+                            <div class="testimonial-date">Jun 2025</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-quote">"I had the privilege of being mentored by Jatin and his guidance was invaluable. His insights on leveraging my experience gave me a fresh perspective on positioning myself in the PM space. His resume feedback was also incredibly helpful."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">A</div>
+                        <div class="testimonial-info">
+                            <div class="testimonial-name">Akhilesh Vasisht</div>
+                            <div class="testimonial-date">Mar 2025</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-quote">"Super insightful and gave very genuine and actionable advice!"</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">A</div>
+                        <div class="testimonial-info">
+                            <div class="testimonial-name">Adam Shivji</div>
+                            <div class="testimonial-date">Mar 2025</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-quote">"A humble and insightful visionary who shares his insights eloquently and clearly."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">Y</div>
+                        <div class="testimonial-info">
+                            <div class="testimonial-name">Yousef Jafarnia Dabanloo</div>
+                            <div class="testimonial-date">Mar 2025</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-quote">"Jatin was incredibly insightful, sharing his background and experiences while offering valuable tips for career exploration through his own early career journey. He was easy to talk to and an exceptional mentor."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">T</div>
+                        <div class="testimonial-info">
+                            <div class="testimonial-name">Tabreek Somani</div>
+                            <div class="testimonial-date">Sep 2024</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-quote">"It's a great session with Jatin and I felt half an hour won't be enough with him, he clearly articulated his experiences and the way it shaped him as a person!! It was an amazing session!!"</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">P</div>
+                        <div class="testimonial-info">
+                            <div class="testimonial-name">Prabhu P</div>
+                            <div class="testimonial-date">Aug 2024</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-quote">"He was genuinely helpful and gave me some really great advice even though we connected over a short call. I wish to connect with him again."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">N</div>
+                        <div class="testimonial-info">
+                            <div class="testimonial-name">Niladri Mondal</div>
+                            <div class="testimonial-date">Jul 2025</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-quote">"Jatin shared great information, induced encouragement, and allowed me to think more holistically about certain topics. The flexibility offered on timing from his side is appreciated. I would recommend chatting with Jatin to others."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">K</div>
+                        <div class="testimonial-info">
+                            <div class="testimonial-name">Karan Saggu</div>
+                            <div class="testimonial-date">Apr 2025</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-quote">"Thank you so much for the very specific advice, which I wasn't aware of before. I truly appreciate it!"</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">R</div>
+                        <div class="testimonial-info">
+                            <div class="testimonial-name">Roy</div>
+                            <div class="testimonial-date">Oct 2024</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-quote">"Helpful and friendly person who also gives valuable advice."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">A</div>
+                        <div class="testimonial-info">
+                            <div class="testimonial-name">Anonymous</div>
+                            <div class="testimonial-date">Sep 2024</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-quote">"Jatin gave me some solid advice and was really friendly."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">A</div>
+                        <div class="testimonial-info">
+                            <div class="testimonial-name">Anonymous</div>
+                            <div class="testimonial-date">Jun 2025</div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -1013,6 +1547,7 @@
     <section class="about" id="about">
         <div class="container">
             <div class="about-content">
+                <img src="/profile-photo.jpg" alt="Jatin Rajvanshi - AI Product Manager" class="profile-photo" onerror="this.style.display='none'">
                 <h2>Hi, I'm Jatin Rajvanshi</h2>
                 <p><strong>Lead Product Manager for AI Agents at TELUS</strong> (Member of TELUS Chief AI Office). I've spent 10+ years building products that impact millions of users across Fortune 500 companies and high-growth startups.</p>
                 <p>From programmer at Cognizant to AI Product leader - my journey took me from Delhi to Vancouver, through 7 Indian cities, with stops in Tokyo. I started with a B.Tech in Computer Science from VIT, got my MBA from UBC Sauder, and learned AI entirely through curiosity and hands-on building.</p>
@@ -1168,11 +1703,11 @@
         <div class="container">
             <p>&copy; 2026 Jatin Rajvanshi | Vancouver, Canada</p>
             <p style="margin-top: 12px; font-size: 0.9rem;">
-                <a href="mailto:jatinrajvanshi13@gmail.com" style="color: #2563EB; text-decoration: none;">jatinrajvanshi13@gmail.com</a> |
-                <a href="https://www.linkedin.com/in/jatin-rajvanshi/" target="_blank" style="color: #2563EB; text-decoration: none;">LinkedIn</a>
+                <a href="mailto:jatinrajvanshi13@gmail.com" style="color: #fff; text-decoration: none;">jatinrajvanshi13@gmail.com</a> |
+                <a href="https://www.linkedin.com/in/jatin-rajvanshi/" target="_blank" style="color: #fff; text-decoration: none;">LinkedIn</a>
             </p>
             <p style="margin-top: 12px; font-size: 0.85rem; opacity: 0.6;">
-                <a href="https://logo.dev" title="Logo API" target="_blank" style="color: #999; text-decoration: none;">Logos provided by Logo.dev</a>
+                <a href="https://logo.dev" title="Logo API" target="_blank" style="color: rgba(255,255,255,0.7); text-decoration: none;">Logos provided by Logo.dev</a>
             </p>
         </div>
     </footer>
