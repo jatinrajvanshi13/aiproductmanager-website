@@ -3,13 +3,13 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
     <url>
         <loc>https://aiproductmanager.ca/</loc>
-        <lastmod>2026-01-14</lastmod>
+        <lastmod>2026-01-20</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>https://aiproductmanager.ca/articles.html</loc>
-        <lastmod>2026-01-14</lastmod>
+        <lastmod>2026-01-20</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -40,6 +40,12 @@
     <url>
         <loc>https://aiproductmanager.ca/articles/pm-communities-bc.html</loc>
         <lastmod>2026-01-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://aiproductmanager.ca/articles/anthropic-economic-index.html</loc>
+        <lastmod>2026-01-20</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>

@@ -2,7 +2,7 @@
 
 **Project Owner**: Jatin Rajvanshi
 **Domain**: https://aiproductmanager.ca
-**Last Updated**: January 17, 2026
+**Last Updated**: January 20, 2026
 **Purpose**: Personal landing page for free AI Product Management mentorship
 
 ---
@@ -73,7 +73,8 @@
 │   ├── evals-for-ai-agents.html   # Article: AI Agent Evals
 │   ├── finding-first-users.html   # Article: How to Find Your First 1,000 Users
 │   ├── tldr-newsletter-for-pms.html # Article: TLDR AI Newsletter Recommendation
-│   └── pm-communities-bc.html     # Article: PM Communities in BC (Product BC + ProductCamp)
+│   ├── pm-communities-bc.html     # Article: PM Communities in BC (Product BC + ProductCamp)
+│   └── anthropic-economic-index.html # Article: Anthropic Economic Index - AI Adoption Trends
 ├── sitemap.xml                     # SEO sitemap for search engines
 ├── robots.txt                      # Search engine crawl instructions
 ├── site.webmanifest               # PWA manifest file
@@ -111,7 +112,7 @@
 
 ### **2. Must-Read Articles for AI PMs**
 - Located right after Hero section (prominent placement)
-- 5-card grid: 5 published articles (Claude Code + AI Evals + First 1,000 Users + TLDR Newsletter + PM Communities BC)
+- 6-card grid: 6 published articles (Claude Code + AI Evals + First 1,000 Users + TLDR Newsletter + PM Communities BC + Anthropic Economic Index)
 - Tagline: "Complex AI concepts explained like we're grabbing coffee"
 - CTA: "View All Articles" → `/articles.html`
 
@@ -229,6 +230,14 @@ Showcases expertise in:
    - ~2,000 words, 7 min read
    - Tags: Community, Networking, Vancouver
    - Note: 4 years of attending events - genuine personal recommendation
+
+6. **"Where AI Adoption Is Really Heading"**
+   - Original: Anthropic Research
+   - URL: https://www.anthropic.com/research/anthropic-economic-index-january-2026-report
+   - Topics: AI adoption patterns, augmentation vs automation (52% vs 75%), task success rates, geographic adoption convergence, five economic primitives, productivity impact (1.0-1.2% annual growth), occupation breakdown
+   - ~2,800 words, 12 min read
+   - Tags: AI Strategy, Industry Trends, Data
+   - Note: High-level 50,000 feet view on AI industry adoption for PMs
 
 **Design:**
 - Matches existing black/white/navy blue palette
@@ -492,12 +501,13 @@ git push origin main
 **✅ Must-Read Articles for AI PMs**
 - Homepage section with article cards
 - Dedicated articles listing page
-- 5 published articles:
+- 6 published articles:
   1. "Why Every AI PM Should Use Claude Code" (Lenny's Newsletter)
   2. "Understanding AI Agent Evals" (Anthropic)
   3. "How to Find Your First 1,000 Users" (Lenny's Newsletter)
   4. "The One AI Newsletter Every PM Should Read Daily" (Personal Recommendation - TLDR AI)
   5. "The Two PM Communities Every PM in BC Should Join" (Personal Recommendation - Product BC + ProductCamp)
+  6. "Where AI Adoption Is Really Heading" (Anthropic Economic Index)
 - Conversational mentor tone for PM audience
 - Scalable structure for adding more articles
 
